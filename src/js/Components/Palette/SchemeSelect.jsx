@@ -5,8 +5,9 @@ import withGeneratePalette from "./_withGeneratePalette";
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 const { SelectControl } = wp.components;
+const { Component } = wp.element;
 
-class SchemeSelect extends React.Component {
+class SchemeSelect extends Component {
 	onChangeHandler = scheme => {
 		const {
 			updateScheme,
