@@ -1,5 +1,5 @@
 import l, { plugin_namespace } from "../../utils/#";
-import Html from "../Utils/_Html";
+import HtmlComponent from "../Utils/_HtmlComponent";
 
 const { clipboard_copy } = icp.local;
 const { Component } = wp.element;
@@ -15,9 +15,9 @@ const withTooltip = WrappedComponent => {
 			if (tooltips_active) {
 				return (
 					<Tooltip text={clipboard_copy}>
-						<Html>
+						<HtmlComponent>
 							<WrappedComponent {...this.props} />
-						</Html>
+						</HtmlComponent>
 					</Tooltip>
 				);
 			}
