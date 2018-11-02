@@ -4,6 +4,7 @@ _extras/wp_svn
 _extras/_old
 _extras/_assets
 build
+languages
 node_modules
 .vscode
 .todo
