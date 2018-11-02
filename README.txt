@@ -50,6 +50,11 @@ Click the More button and inside the menu list click on the plugin name "Image C
 
 == Changelog ==
 
+= 1.2.0 =
+* Improved code base and interface
+* Organized UI in two tabs: Palette & Settings
+* The scheme can now be toggled directly from the Palette
+
 = 1.1.0 =
 * Improved UX with better debouncing and better performance in color palette generation
 * Moved copied_color and copied_index out of store
