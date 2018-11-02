@@ -4,7 +4,7 @@
  * Plugin URI: https://wordpress.org/plugins/image-color-palette/
  * Description: Create a color palette based on the colors of an image.
  * Author: melonpan
- * Version: 1.1.0
+ * Version: 1.2.0
  * License: GPL3+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
  */
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'IMAGECOLORPALETTE_PLUGIN_VERSION' ) ) {
-	define( 'IMAGECOLORPALETTE_PLUGIN_VERSION', '1.1.0' );
+	define( 'IMAGECOLORPALETTE_PLUGIN_VERSION', '1.2.0' );
 }
 if ( ! defined( 'IMAGECOLORPALETTE_BUILD_DIR' ) ) {
 	define( 'IMAGECOLORPALETTE_BUILD_DIR', plugins_url( 'build/', __FILE__ ) );
