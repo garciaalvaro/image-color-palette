@@ -1,0 +1,126 @@
+# Copyright (C) 2018 Image Color Palette
+# This file is distributed under the same license as the Image Color Palette package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Image Color Palette\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: image-color-palette.php:62
+msgid "Image Color Palette"
+msgstr ""
+
+#: image-color-palette.php:63
+msgid "Click to copy to the clipboard"
+msgstr ""
+
+#: image-color-palette.php:64
+msgid "Copied to the clipboard"
+msgstr ""
+
+#: image-color-palette.php:65
+msgid "Settings"
+msgstr ""
+
+#: image-color-palette.php:66
+msgid "Number of palette colors"
+msgstr ""
+
+#: image-color-palette.php:67
+msgid "Number of colors from the image to show in the palette"
+msgstr ""
+
+#: image-color-palette.php:68
+msgid "Show color Tooltips"
+msgstr ""
+
+#: image-color-palette.php:69
+msgid "Tooltips display a short message explaining what will happen when interacting with the UI. They appear when the mouse is over the element."
+msgstr ""
+
+#: image-color-palette.php:70
+msgid "Color scheme"
+msgstr ""
+
+#: image-color-palette.php:71
+msgid "The selected scheme will appear on the right side of each image color."
+msgstr ""
+
+#: image-color-palette.php:72
+msgid "Click to open the Media Library and select an image."
+msgstr ""
+
+#: image-color-palette.php:73
+msgid "Click to open the Media Library"
+msgstr ""
+
+#: image-color-palette.php:74
+msgid "Click the button and select an image from the Media Library. A palette of colors should appear below the image."
+msgstr ""
+
+#: image-color-palette.php:75
+msgid "Click any color and it will be copied to the clipboard."
+msgstr ""
+
+#: image-color-palette.php:76
+msgid "Once copied to the clipboard (in HEX format) the color can be pasted in the color picker of any block."
+msgstr ""
+
+#: image-color-palette.php:77
+msgid "Steps"
+msgstr ""
+
+#: image-color-palette.php:78
+msgid "Create a color palette based on the colors of an image."
+msgstr ""
+
+#: image-color-palette.php:79
+msgid "Instructions"
+msgstr ""
+
+#: image-color-palette.php:81
+msgid "None"
+msgstr ""
+
+#: image-color-palette.php:82
+msgid "Analogous"
+msgstr ""
+
+#: image-color-palette.php:83
+msgid "Monochromatic"
+msgstr ""
+
+#: image-color-palette.php:84
+msgid "Triad"
+msgstr ""
+
+#: image-color-palette.php:85
+msgid "Complementary"
+msgstr ""
+
+#: image-color-palette.php:86
+msgid "Lighter"
+msgstr ""
+
+#: image-color-palette.php:87
+msgid "Brighter"
+msgstr ""
+
+#: image-color-palette.php:88
+msgid "Darker"
+msgstr ""
+
+#: image-color-palette.php:89
+msgid "Desaturated"
+msgstr ""
+
+#: image-color-palette.php:90
+msgid "Saturated"
+msgstr ""

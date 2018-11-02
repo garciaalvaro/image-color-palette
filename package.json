@@ -1,0 +1,42 @@
+{
+	"name": "image-color-palette",
+	"name_title": "Image Color Palette for Gutenberg",
+	"version": "1.1.0",
+	"description": "Create a color Palette from an image",
+	"homepage": "https://wordpress.org/plugins/image-color-palette/",
+	"main": "index.js",
+	"scripts": {
+		"dev": "parcel watch src/index.js -o image-color-palette.js -d build --no-hmr",
+		"prod": "parcel build src/index.js -o image-color-palette.min.js -d build --no-source-maps",
+		"backup": "gulp backup",
+		"pot": "gulp pot",
+		"release": "gulp release"
+	},
+	"devDependencies": {
+		"autoprefixer": "^9.1.0",
+		"babel-cli": "^6.26.0",
+		"babel-core": "^6.26.3",
+		"babel-plugin-transform-async-generator-functions": "^6.24.1",
+		"babel-plugin-transform-class-properties": "^6.24.1",
+		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-env": "^1.7.0",
+		"babel-preset-react": "^6.24.1",
+		"babel-register": "^6.26.0",
+		"cssnano": "^4.1.0",
+		"gulp": "github:gulpjs/gulp#4.0",
+		"gulp-header": "^2.0.5",
+		"gulp-rename": "^1.4.0",
+		"gulp-replace": "^1.0.0",
+		"gulp-run-command": "0.0.9",
+		"gulp-wp-pot": "^2.3.2",
+		"gulp-zip": "^4.2.0",
+		"merge2": "^1.2.2",
+		"stylus": "^0.54.5"
+	},
+	"dependencies": {
+		"classnames": "^2.2.6",
+		"jquery": "^3.3.1",
+		"react": "^16.4.2"
+	}
+}

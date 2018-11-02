@@ -1,0 +1,94 @@
+/*
+ * Color Row
+ */
+
+.icp-color_row
+	display flex
+	height 4em
+	position relative
+
+.icp-image_color
+.icp-scheme_colors
+	flex 1
+	display flex
+
+	> span
+		width 100%
+		height 100%
+
+.icp-scheme_colors
+	> span
+		flex 7
+	.icp-color_button
+		border-left 1px solid rgba(255,255,255,.05)
+
+.icp-image_color
+	.icp-color_button
+		text-align left
+		font-size 13px
+		padding-left 1em
+
+#icp-colors-container
+	.icp-color_button
+		display block
+
+.icp-color_button
+	height 100%
+	width 100%
+	padding 0
+	position relative
+
+	&.text_color-dark
+		.icp-color_text
+			color rgba(0,0,0,0.95)
+			text-shadow 1px 1px 0px rgba(255,255,255,0.3)
+
+	&.text_color-light
+		.icp-color_text
+			color rgba(255,255,255,0.87)
+			text-shadow 1px 1px 0px rgba(0,0,0,0.3)
+
+	&.text_color-dark
+		border-left-color rgba(0,0,0,.05)
+
+	&:hover:after
+		content ""
+
+	&:after
+		width 0
+		height 0
+		border-left 8px solid transparent
+		border-right 0px solid transparent
+		position absolute
+		right 0
+		bottom 0
+
+	&.text_color-light:after
+		border-bottom 8px solid rgba(255,255,255,0.5)
+
+	&.text_color-dark:after
+		border-bottom 8px solid rgba(0,0,0,0.5)
+
+	#icp-colors-container &:focus
+	#icp-colors-container &:active
+		box-shadow none
+
+.icp-color_copied
+	width 100%
+	height 100%
+	position absolute
+	display flex
+	align-items center
+	justify-content center
+
+	&.text_color-dark
+		color rgba(0,0,0,0.95)
+		text-shadow 1px 1px 0px rgba(255,255,255,0.3)
+		border-top 1px solid rgba(0,0,0,.05)
+		border-bottom 1px solid rgba(0,0,0,.05)
+
+	&.text_color-light
+		color rgba(255,255,255,0.87)
+		text-shadow 1px 1px 0px rgba(0,0,0,0.3)
+		border-top 1px solid rgba(255,255,255,.05)
+		border-bottom 1px solid rgba(255,255,255,.05)
