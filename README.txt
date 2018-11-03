@@ -19,7 +19,8 @@ Until WordPress 5 is released this plugin depends on the latest version of Guten
 
 == Screenshots ==
 
-1. GIF of the process of creating a palette and using the generated colors.
+1. Example use of palette generated colors.
+2. Scheme select list.
 
 == Usage ==
 
