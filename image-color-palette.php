@@ -76,7 +76,7 @@ function enqueue() {
 			'instructions'                => __( 'Instructions', 'image-color-palette' ),
 			'header_image_colors'         => __( 'Image colors', 'image-color-palette' ),
 			'schemes'                     => array(
-				'none'          => __( 'None', 'image-color-palette' ),
+				'none'          => __( 'No color scheme', 'image-color-palette' ),
 				'analogous'     => __( 'Analogous', 'image-color-palette' ),
 				'monochromatic' => __( 'Monochromatic', 'image-color-palette' ),
 				'triad'         => __( 'Triad', 'image-color-palette' ),
