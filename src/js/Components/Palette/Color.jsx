@@ -15,23 +15,17 @@ const { updateBlockAttributes } = dispatch("core/editor");
 const { ClipboardButton, Popover, Button, MenuGroup, MenuItem } = wp.components;
 
 class Color extends Component {
-	constructor(props) {
-		super(props);
-		this.mounted = true;
-	}
-
 	componentWillUnmount = () => {
-		this.mounted = false;
-		this.onClickOutsideHandler.cancel();
+		this.resetPopoverJustClosed.cancel();
 	};
 
-	onClickOutsideHandler = throttle(
+	resetPopoverJustClosed = throttle(
 		() => {
 			const { setState } = this.props;
 
-			setState({ popover_open: false });
+			setState({ popover_just_closed: false });
 		},
-		0,
+		300,
 		{
 			leading: false,
 			trailing: true
@@ -49,11 +43,11 @@ class Color extends Component {
 	};
 
 	render() {
-		const { getContrastColor, onClickOutsideHandler } = this;
+		const { getContrastColor, resetPopoverJustClosed } = this;
 		const {
 			setState,
 			popover_open,
-			just_copied,
+			popover_just_closed,
 			color,
 			show_hex,
 			att_with_custom_colors
@@ -61,7 +55,7 @@ class Color extends Component {
 		const color_className = classNames(
 			{
 				"is-menu_open": popover_open,
-				just_copied: just_copied
+				popover_just_closed: popover_just_closed
 			},
 			"icp-color_button",
 			"icp-color_button",
@@ -76,7 +70,7 @@ class Color extends Component {
 				className={color_className}
 				style={{ backgroundColor: color }}
 				onClick={() => {
-					if (!popover_open) {
+					if (!popover_open && !popover_just_closed) {
 						setState({ popover_open: true });
 					}
 				}}
@@ -89,12 +83,18 @@ class Color extends Component {
 						{color}
 					</HtmlComponent>
 				)}
-				{popover_open && (
+				{popover_open && !popover_just_closed && (
 					<Popover
 						id="icp-color_menu-container"
 						className={popover_className}
 						focusOnMount={false}
-						onClickOutside={onClickOutsideHandler}
+						onClickOutside={() => {
+							setState({
+								popover_open: false,
+								popover_just_closed: true
+							});
+							resetPopoverJustClosed();
+						}}
 					>
 						<Html
 							style={{
@@ -106,17 +106,9 @@ class Color extends Component {
 									onCopy={() => {
 										setState({
 											popover_open: false,
-											just_copied: true
+											popover_just_closed: true
 										});
-									}}
-									onFinishCopy={() => {
-										if (!this.mounted) {
-											return;
-										}
-
-										setState({
-											just_copied: false
-										});
+										resetPopoverJustClosed();
 									}}
 									text={color}
 								>
@@ -129,8 +121,11 @@ class Color extends Component {
 										icon={icons[att.icon]}
 										onClick={() => {
 											const selected_block_clientId = getSelectedBlockClientId();
-
-											setState({ popover_open: false });
+											setState({
+												popover_open: false,
+												popover_just_closed: true
+											});
+											resetPopoverJustClosed();
 											updateBlockAttributes(
 												selected_block_clientId,
 												{
@@ -151,4 +146,6 @@ class Color extends Component {
 	}
 }
 
-export default withState({ popover_open: false, just_copied: false })(Color);
+export default withState({ popover_open: false, popover_just_closed: false })(
+	Color
+);

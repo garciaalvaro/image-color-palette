@@ -2,7 +2,13 @@
  * Color Menu
  */
 
+$e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
+
 .icp-color_button
+
+	&.popover_just_closed:before
+		transition border-color .3s $e_deceleration
+
 	&:before
 		content ""
 		position absolute

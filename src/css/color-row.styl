@@ -2,8 +2,6 @@
  * Color Row
  */
 
-$e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
-
 .icp-color_row
 	display flex
 	height 4em
@@ -56,6 +54,3 @@ $e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
 	#icp-colors-container &:focus
 	#icp-colors-container &:active
 		box-shadow none
-
-	&.just_copied:before
-		transition border-color .2s .1s $e_deceleration
