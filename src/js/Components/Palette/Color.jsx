@@ -4,8 +4,9 @@ import Html from "../Utils/_Html";
 import HtmlComponent from "../Utils/_HtmlComponent";
 import tinycolor from "../../../plugins/tinycolor.min";
 
+const { copy_to_clipboard, paste_to_attribute } = icp.local;
 const { throttle } = lodash;
-const { __, sprintf } = wp.i18n;
+const { sprintf } = wp.i18n;
 const { Component } = wp.element;
 const { withState } = wp.compose;
 const { select, dispatch } = wp.data;
@@ -110,7 +111,7 @@ class Color extends Component {
 									text={color}
 								>
 									{icons.color_picker}
-									{__("Copy color to the Clipboard")}
+									{copy_to_clipboard}
 								</ClipboardButton>
 								{att_with_custom_colors.map((att, index) => (
 									<MenuItem
@@ -128,12 +129,7 @@ class Color extends Component {
 											);
 										}}
 									>
-										{sprintf(
-											__(
-												"Apply color to selected Block's %s"
-											),
-											att.label
-										)}
+										{sprintf(paste_to_attribute, att.label)}
 									</MenuItem>
 								))}
 							</MenuGroup>

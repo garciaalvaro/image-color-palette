@@ -58,6 +58,9 @@ function enqueue() {
 
 	$data = array(
 		'local'  => array(
+			/* translators: %s: Block attribute. */
+			'paste_to_attribute'         => __( 'Apply color to selected block\'s %s', 'image-color-palette' ),
+			'copy_to_clipboard'          => __( 'Copy color to the clipboard', 'image-color-palette' ),
 			'settings_label'             => __( 'Settings', 'image-color-palette' ),
 			'palette_label'              => __( 'Palette', 'image-color-palette' ),
 			'palette_length_label'       => __( 'Number of palette colors', 'image-color-palette' ),
@@ -66,8 +69,8 @@ function enqueue() {
 			'scheme_description'         => __( 'The selected scheme will appear on the right side of each image color.', 'image-color-palette' ),
 			'click_to_open'              => __( 'Click to open the Media Library and select an image.', 'image-color-palette' ),
 			'instructions_1'             => __( 'Click the button and select an image from the Media Library. A palette of colors should appear below the image.', 'image-color-palette' ),
-			'instructions_2'             => __( 'Click any color and it will be copied to the clipboard.', 'image-color-palette' ),
-			'instructions_3'             => __( 'Once copied to the clipboard (in HEX format) the color can be pasted in the color picker of any block.', 'image-color-palette' ),
+			'instructions_2'             => __( 'Click on a color and its menu will open. If there is a block selected that has custom color attributes, options to update them directly from the menu will show (currently, core blocks are supported).', 'image-color-palette' ),
+			'instructions_3'             => __( 'If the color was copied to the clipboard (in HEX format) it can be pasted to the color picker of any block.', 'image-color-palette' ),
 			'instructions_description'   => __( 'Create a color palette based on the colors of an image.', 'image-color-palette' ),
 			'instructions'               => __( 'Instructions', 'image-color-palette' ),
 			'header_image_colors'        => __( 'Image colors', 'image-color-palette' ),
