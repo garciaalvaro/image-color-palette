@@ -3,6 +3,7 @@ _extras/releases
 _extras/wp_svn
 _extras/_old
 _extras/_assets
+_extras/_test
 build
 languages
 node_modules
