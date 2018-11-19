@@ -14,7 +14,7 @@ const withTooltip = WrappedComponent => {
 
 			if (tooltips_active) {
 				return (
-					<Tooltip text={clipboard_copy}>
+					<Tooltip text={clipboard_copy} position="bottom center">
 						<HtmlComponent>
 							<WrappedComponent {...this.props} />
 						</HtmlComponent>

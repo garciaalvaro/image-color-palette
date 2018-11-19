@@ -29,7 +29,8 @@ class ColorRow extends Component {
 			palette,
 			color,
 			text_color,
-			is_last_copied_color
+			is_last_copied_color,
+			att_with_custom_colors
 		} = this.props;
 
 		return (
@@ -39,6 +40,7 @@ class ColorRow extends Component {
 						color={main_color}
 						show_hex={true}
 						toggleCopied={toggleCopied}
+						att_with_custom_colors={att_with_custom_colors}
 					/>
 				</Html>
 				<Html className="icp-scheme_colors">
@@ -48,23 +50,23 @@ class ColorRow extends Component {
 							color={color}
 							show_hex={false}
 							toggleCopied={toggleCopied}
+							att_with_custom_colors={att_with_custom_colors}
 						/>
 					))}
 				</Html>
-				{color !== false &&
-					is_last_copied_color && (
-						<Html
-							className={[
-								"icp-color_copied",
-								`text_color-${text_color}`
-							].join(" ")}
-							style={{
-								backgroundColor: color
-							}}
-						>
-							<Html html_element="span">{clipboard_copied}</Html>
-						</Html>
-					)}
+				{color !== false && is_last_copied_color && (
+					<Html
+						className={[
+							"icp-color_copied",
+							`text_color-${text_color}`
+						].join(" ")}
+						style={{
+							backgroundColor: color
+						}}
+					>
+						<Html html_element="span">{clipboard_copied}</Html>
+					</Html>
+				)}
 			</Html>
 		);
 	}
