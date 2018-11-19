@@ -46,14 +46,15 @@ class Color extends Component {
 		const {
 			setState,
 			popover_open,
+			just_copied,
 			color,
 			show_hex,
-			toggleCopied,
 			att_with_custom_colors
 		} = this.props;
 		const color_className = classNames(
 			{
-				"is-menu_open": popover_open
+				"is-menu_open": popover_open,
+				just_copied: just_copied
 			},
 			"icp-color_button",
 			"icp-color_button",
@@ -96,12 +97,16 @@ class Color extends Component {
 							<MenuGroup className="icp-color_menu">
 								<ClipboardButton
 									onCopy={() => {
-										setState({ popover_open: false });
-										toggleCopied(color, getContrastColor());
+										setState({
+											popover_open: false,
+											just_copied: true
+										});
 									}}
-									onFinishCopy={() =>
-										toggleCopied(false, false)
-									}
+									onFinishCopy={() => {
+										setState({
+											just_copied: false
+										});
+									}}
 									text={color}
 								>
 									{icons.color_picker}
@@ -140,4 +145,4 @@ class Color extends Component {
 	}
 }
 
-export default withState({ popover_open: false })(Color);
+export default withState({ popover_open: false, just_copied: false })(Color);

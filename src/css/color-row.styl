@@ -2,6 +2,8 @@
  * Color Row
  */
 
+$e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
+
 .icp-color_row
 	display flex
 	height 4em
@@ -55,22 +57,5 @@
 	#icp-colors-container &:active
 		box-shadow none
 
-.icp-color_copied
-	width 100%
-	height 100%
-	position absolute
-	display flex
-	align-items center
-	justify-content center
-
-	&.text_color-dark
-		color rgba(0,0,0,0.95)
-		text-shadow 1px 1px 0px rgba(255,255,255,0.3)
-		border-top 1px solid rgba(0,0,0,.05)
-		border-bottom 1px solid rgba(0,0,0,.05)
-
-	&.text_color-light
-		color rgba(255,255,255,0.87)
-		text-shadow 1px 1px 0px rgba(0,0,0,0.3)
-		border-top 1px solid rgba(255,255,255,.05)
-		border-bottom 1px solid rgba(255,255,255,.05)
+	&.just_copied:before
+		transition border-color .2s .1s $e_deceleration

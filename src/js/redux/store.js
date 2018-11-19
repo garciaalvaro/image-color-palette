@@ -12,11 +12,6 @@ const reducer = function() {
 		}
 
 		switch (action.type) {
-			case "UPDATE_LAST_COPIED_COLOR":
-				return {
-					...state,
-					last_copied_color: action.color
-				};
 			case "UPDATE_SCHEME":
 				return {
 					...state,
@@ -54,9 +49,6 @@ const selectors = function() {
 		isImageLoaded(state) {
 			return state.image_data.id !== false;
 		},
-		getLastCopiedColor(state) {
-			return state.last_copied_color;
-		},
 		getScheme(state) {
 			return state.scheme;
 		},
@@ -74,12 +66,6 @@ const selectors = function() {
 
 const actions = function() {
 	return {
-		updateLastCopiedColor(color) {
-			return {
-				type: "UPDATE_LAST_COPIED_COLOR",
-				color
-			};
-		},
 		updateScheme(scheme) {
 			return {
 				type: "UPDATE_SCHEME",

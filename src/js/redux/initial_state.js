@@ -8,8 +8,7 @@ const initial_state = {
 	},
 	palette_length: 10,
 	scheme: "saturated",
-	colors: [],
-	last_copied_color: false
+	colors: []
 };
 
 export default initial_state;
