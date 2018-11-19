@@ -1,6 +1,6 @@
 import l from "../../utils/#";
 import classNames from "classnames";
-import Html from "../Utils/_Html";
+import Div, { Span } from "../Utils/_Html";
 
 const { palette_label, settings_label } = icp.local;
 const { Button } = wp.components;
@@ -23,20 +23,20 @@ class TogglePanel extends Component {
 		const { openPanel } = this.props;
 
 		return (
-			<Html id="icp-toggle-panel">
+			<Div id="icp-toggle-panel">
 				<Button
 					className={getButtonClassName("palette")}
 					onClick={() => openPanel("palette")}
 				>
-					<Html html_element="span">{palette_label}</Html>
+					<Span>{palette_label}</Span>
 				</Button>
 				<Button
 					className={getButtonClassName("settings")}
 					onClick={() => openPanel("settings")}
 				>
-					<Html html_element="span">{settings_label}</Html>
+					<Span>{settings_label}</Span>
 				</Button>
-			</Html>
+			</Div>
 		);
 	}
 }

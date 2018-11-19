@@ -1,6 +1,6 @@
 import l, { icons, rgbquant_options, plugin_namespace } from "../../utils/#";
-import Html from "../Utils/_Html";
-import HtmlForwardRef from "../Utils/_HtmlForwardRef";
+import Div from "../Utils/_Html";
+import { ImgForwardRef } from "../Utils/_HtmlForwardRef";
 import tinycolor from "../../../plugins/tinycolor.min";
 import RgbQuant from "../../../plugins/rgbquant.min";
 import withGeneratePalette from "./_withGeneratePalette";
@@ -55,9 +55,8 @@ class MediaImage extends Component {
 
 		return (
 			<Fragment>
-				<Html id="icp-image-container">
-					<HtmlForwardRef
-						html_element="img"
+				<Div id="icp-image-container">
+					<ImgForwardRef
 						id="icp-image"
 						onClick={open}
 						onLoad={onLoadHandler}
@@ -65,7 +64,7 @@ class MediaImage extends Component {
 						alt={alt}
 						ref={this.image}
 					/>
-				</Html>
+				</Div>
 				<Button id="icp-image-edit" onClick={open}>
 					{icons.edit}
 				</Button>

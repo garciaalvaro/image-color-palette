@@ -1,5 +1,5 @@
 import l from "../../utils/#";
-import Html from "../Utils/_Html";
+import Div, { Ol, Li } from "../Utils/_Html";
 
 const {
 	instructions,
@@ -17,15 +17,13 @@ const InstructionsPanel = () => {
 			title={instructions}
 			className="icp-instructions-container icp-panel"
 		>
-			<Html id="icp-instructions-content">
-				<Html html_element="ol">
+			<Div id="icp-instructions-content">
+				<Ol>
 					{steps.map((step, index) => (
-						<Html key={index} html_element="li">
-							{step}
-						</Html>
+						<Li key={index}>{step}</Li>
 					))}
-				</Html>
-			</Html>
+				</Ol>
+			</Div>
 		</PanelBody>
 	);
 };

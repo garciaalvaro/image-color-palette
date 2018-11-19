@@ -2,21 +2,20 @@ import l from "../../utils/#";
 
 const { Component } = wp.element;
 
-class HtmlComponent extends Component {
+class DivComponent extends Component {
 	render() {
-		const { children, html_element, ...rest } = this.props;
-		let element;
+		const { children, ...rest } = this.props;
 
-		switch (html_element) {
-			case "span":
-				element = <span {...rest}>{children}</span>;
-				break;
-			default:
-				element = <div {...rest}>{children}</div>;
-		}
+		return <div {...rest}>{children}</div>;
+	}
+}
+class SpanComponent extends Component {
+	render() {
+		const { children, ...rest } = this.props;
 
-		return element;
+		return <span {...rest}>{children}</span>;
 	}
 }
 
-export default HtmlComponent;
+export default DivComponent;
+export { SpanComponent };

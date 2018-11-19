@@ -1,7 +1,7 @@
 import l, { plugin_namespace, blocks_info } from "../../utils/#";
 import ColorsHeader from "./ColorsHeader";
 import ColorRow from "./ColorRow";
-import Html from "../Utils/_Html";
+import Div from "../Utils/_Html";
 
 const { isUndefined, get, isNil, isEqual } = lodash;
 const { Component } = wp.element;
@@ -48,7 +48,7 @@ class ColorsContainer extends Component {
 		const { colors, att_with_custom_colors } = this.props;
 
 		return (
-			<Html id="icp-colors-container">
+			<Div id="icp-colors-container">
 				<ColorsHeader />
 				{colors.map((color, index) => (
 					<ColorRow
@@ -57,7 +57,7 @@ class ColorsContainer extends Component {
 						{...color}
 					/>
 				))}
-			</Html>
+			</Div>
 		);
 	}
 }

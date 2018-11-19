@@ -1,7 +1,7 @@
 import l, { plugin_namespace } from "../../utils/#";
 import MediaImage from "./MediaImage";
 import MediaPlaceholder from "./MediaPlaceholder";
-import Html from "../Utils/_Html";
+import Div from "../Utils/_Html";
 
 const { isNil } = lodash;
 const { MediaUpload } = wp.editor;
@@ -50,7 +50,7 @@ class MediaContainer extends Component {
 		const { image_data } = this.props;
 
 		return (
-			<Html id="icp-media-container">
+			<Div id="icp-media-container">
 				<MediaUpload
 					onSelect={onSelectHandler}
 					type="image"
@@ -58,7 +58,7 @@ class MediaContainer extends Component {
 					multiple={false}
 					render={renderHandler}
 				/>
-			</Html>
+			</Div>
 		);
 	}
 }

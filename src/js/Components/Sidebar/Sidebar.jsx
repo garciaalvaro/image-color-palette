@@ -1,6 +1,6 @@
 import l, { plugin_namespace } from "../../utils/#";
 import TogglePanel from "./TogglePanel";
-import Html from "../Utils/_Html";
+import Div from "../Utils/_Html";
 import Palette from "../Palette/Palette";
 import Settings from "../Settings/Settings";
 
@@ -25,13 +25,13 @@ class Sidebar extends Component {
 		const { current_panel } = this.props;
 
 		return (
-			<Html id="icp-container" className={getClassName()}>
+			<Div id="icp-container" className={getClassName()}>
 				<TogglePanel
 					openPanel={openPanel}
 					current_panel={current_panel}
 				/>
 				{current_panel === "palette" ? <Palette /> : <Settings />}
-			</Html>
+			</Div>
 		);
 	}
 }

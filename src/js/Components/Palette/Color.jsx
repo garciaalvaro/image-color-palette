@@ -1,7 +1,7 @@
 import l, { icons } from "../../utils/#";
 import classNames from "classnames";
-import Html from "../Utils/_Html";
-import HtmlComponent from "../Utils/_HtmlComponent";
+import Div from "../Utils/_Html";
+import { SpanComponent } from "../Utils/_HtmlComponent";
 import tinycolor from "../../../plugins/tinycolor.min";
 
 const { copy_to_clipboard, paste_to_attribute } = icp.local;
@@ -76,12 +76,9 @@ class Color extends Component {
 				}}
 			>
 				{show_hex && (
-					<HtmlComponent
-						html_element="span"
-						className="icp-color_text"
-					>
+					<SpanComponent className="icp-color_text">
 						{color}
-					</HtmlComponent>
+					</SpanComponent>
 				)}
 				{popover_open && !popover_just_closed && (
 					<Popover
@@ -96,7 +93,7 @@ class Color extends Component {
 							resetPopoverJustClosed();
 						}}
 					>
-						<Html
+						<Div
 							style={{
 								"--main_color": color
 							}}
@@ -138,7 +135,7 @@ class Color extends Component {
 									</MenuItem>
 								))}
 							</MenuGroup>
-						</Html>
+						</Div>
 					</Popover>
 				)}
 			</Button>

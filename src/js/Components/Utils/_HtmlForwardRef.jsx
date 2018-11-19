@@ -2,24 +2,17 @@ import l from "../../utils/#";
 
 const { forwardRef } = wp.element;
 
-const HtmlForwardRef = forwardRef(
-	({ children, html_element, ...rest }, ref) => {
-		let element;
+const DivForwardRef = forwardRef(({ children, ...rest }, ref) => {
+	return (
+		<div {...rest} ref={ref}>
+			{children}
+		</div>
+	);
+});
 
-		switch (html_element) {
-			case "img":
-				element = <img {...rest} ref={ref} />;
-				break;
-			default:
-				element = (
-					<div {...rest} ref={ref}>
-						{children}
-					</div>
-				);
-		}
+const ImgForwardRef = forwardRef(({ children, ...rest }, ref) => {
+	return <img {...rest} ref={ref} />;
+});
 
-		return element;
-	}
-);
-
-export default HtmlForwardRef;
+export default DivForwardRef;
+export { ImgForwardRef };

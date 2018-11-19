@@ -1,5 +1,5 @@
 import l, { icons } from "../../utils/#";
-import Html from "../Utils/_Html";
+import Div, { Span } from "../Utils/_Html";
 
 const { click_to_open } = icp.local;
 
@@ -7,12 +7,12 @@ const MediaPlaceholder = props => {
 	const { open } = props;
 
 	return (
-		<Html onClick={open} id="icp-placeholder">
-			<Html id="icp-placeholder-icon">{icons.image}</Html>
-			<Html id="icp-placeholder-description">
-				<Html html_element="span">{click_to_open}</Html>
-			</Html>
-		</Html>
+		<Div onClick={open} id="icp-placeholder">
+			<Div id="icp-placeholder-icon">{icons.image}</Div>
+			<Div id="icp-placeholder-description">
+				<Span>{click_to_open}</Span>
+			</Div>
+		</Div>
 	);
 };
 
