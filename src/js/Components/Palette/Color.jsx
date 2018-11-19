@@ -15,7 +15,13 @@ const { updateBlockAttributes } = dispatch("core/editor");
 const { ClipboardButton, Popover, Button, MenuGroup, MenuItem } = wp.components;
 
 class Color extends Component {
+	constructor(props) {
+		super(props);
+		this.mounted = true;
+	}
+
 	componentWillUnmount = () => {
+		this.mounted = false;
 		this.onClickOutsideHandler.cancel();
 	};
 
@@ -104,6 +110,10 @@ class Color extends Component {
 										});
 									}}
 									onFinishCopy={() => {
+										if (!this.mounted) {
+											return;
+										}
+
 										setState({
 											just_copied: false
 										});
