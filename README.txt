@@ -51,6 +51,11 @@ Click the More button and inside the menu list click on the plugin name "Image C
 
 == Changelog ==
 
+= 1.3.0 =
+* Added new feature to paste the color automatically to the selected block color attribute (currently available for core blocks)
+* Added new popover menu when clicking on a color
+* Small fixes
+
 = 1.2.0 =
 * Improved code base and interface
 * Organized UI in two tabs: Palette & Settings
