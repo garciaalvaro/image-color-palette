@@ -64,8 +64,6 @@ function enqueue() {
 			'palette_label'               => __( 'Palette', 'image-color-palette' ),
 			'palette_length_label'        => __( 'Number of palette colors', 'image-color-palette' ),
 			'palette_length_description'  => __( 'Number of colors from the image to show in the palette', 'image-color-palette' ),
-			'tooltips_active_label'       => __( 'Show color Tooltips', 'image-color-palette' ),
-			'tooltips_active_description' => __( 'Tooltips display a short message explaining what will happen when interacting with the UI. They appear when the mouse is over the element.', 'image-color-palette' ),
 			'scheme_label'                => __( 'Color scheme', 'image-color-palette' ),
 			'scheme_description'          => __( 'The selected scheme will appear on the right side of each image color.', 'image-color-palette' ),
 			'click_to_open'               => __( 'Click to open the Media Library and select an image.', 'image-color-palette' ),

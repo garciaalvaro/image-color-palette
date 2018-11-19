@@ -1,5 +1,4 @@
 import l, { plugin_namespace } from "../../utils/#";
-import withTooltip from "./_withTooltip";
 import Color from "./Color";
 import Html from "../Utils/_Html";
 
@@ -90,6 +89,5 @@ export default compose([
 		return {
 			updateLastCopiedColor
 		};
-	}),
-	withTooltip
+	})
 ])(ColorRow);

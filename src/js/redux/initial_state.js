@@ -6,7 +6,6 @@ const initial_state = {
 		url: false,
 		alt: false
 	},
-	tooltips_active: true,
 	palette_length: 10,
 	scheme: "saturated",
 	colors: [],

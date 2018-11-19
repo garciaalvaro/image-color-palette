@@ -27,11 +27,6 @@ const reducer = function() {
 					...state,
 					palette_length: action.palette_length
 				};
-			case "UPDATE_TOOLTIPS_ACTIVE":
-				return {
-					...state,
-					tooltips_active: action.tooltips_active
-				};
 			case "UPDATE_COLORS":
 				return {
 					...state,
@@ -68,9 +63,6 @@ const selectors = function() {
 		getPaletteLength(state) {
 			return state.palette_length;
 		},
-		isTooltipsActive(state) {
-			return state.tooltips_active;
-		},
 		getColors(state) {
 			return state.colors;
 		},
@@ -100,12 +92,6 @@ const actions = function() {
 				palette_length
 			};
 		},
-		updateTooltipsActive(tooltips_active) {
-			return {
-				type: "UPDATE_TOOLTIPS_ACTIVE",
-				tooltips_active
-			};
-		},
 		updateColors(colors) {
 			return {
 				type: "UPDATE_COLORS",
@@ -127,7 +113,7 @@ const store = registerStore(plugin_namespace, {
 	selectors: selectors(),
 	controls: {},
 	resolvers: {},
-	persist: ["tooltips_active", "palette_length", "scheme"]
+	persist: ["palette_length", "scheme"]
 });
 
 export default store;
