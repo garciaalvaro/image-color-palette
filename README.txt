@@ -2,7 +2,7 @@
 Contributors: melonpan
 Tags: gutenberg, color
 Requires at least: 4.9.8
-Tested up to: 5
+Tested up to: 4.9.8
 Stable tag: 1.3.1
 Requires PHP: 5.6
 License: GPLv3
