@@ -10,6 +10,16 @@ const { compose, withState } = wp.compose;
 const { getBlockType } = select("core/blocks");
 
 class ColorsContainer extends Component {
+	componentDidMount = () => {
+		const { selected_block_name, setState } = this.props;
+
+		if (!isNil(selected_block_name)) {
+			const att_with_custom_colors = this.getAttributesWithCustomcolors();
+
+			setState({ att_with_custom_colors: att_with_custom_colors });
+		}
+	};
+
 	componentDidUpdate = prevProps => {
 		const { selected_block_name, setState } = this.props;
 
