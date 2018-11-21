@@ -3,7 +3,7 @@ Contributors: melonpan
 Tags: gutenberg, color
 Requires at least: 4.9.8
 Tested up to: 5
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 Requires PHP: 5.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -50,6 +50,9 @@ Alternatively the Plugin can be opened from the More button (the 3 dots on the r
 Click the More button and inside the menu list click on the plugin name "Image Color Palette".
 
 == Changelog ==
+
+= 1.3.1 =
+* Fixed block selected before plugin sidebar is open not passing attribute options to color menu.
 
 = 1.3.0 =
 * Added new feature to paste the color automatically to the selected block color attribute (currently available for core blocks)
