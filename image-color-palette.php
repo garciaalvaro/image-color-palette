@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Image Color Palette for Gutenberg
+ * Plugin Name: Image Color Palette
  * Plugin URI: https://wordpress.org/plugins/image-color-palette/
  * Description: Create a color palette based on the colors of an image.
  * Author: melonpan
@@ -16,11 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! defined( 'IMAGECOLORPALETTE_PLUGIN_VERSION' ) ) {
-	define( 'IMAGECOLORPALETTE_PLUGIN_VERSION', '1.3.1' );
+if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
+	define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.3.1' );
 }
-if ( ! defined( 'IMAGECOLORPALETTE_BUILD_DIR' ) ) {
-	define( 'IMAGECOLORPALETTE_BUILD_DIR', plugins_url( 'build/', __FILE__ ) );
+if ( ! defined( __NAMESPACE__ . '\PLUGIN_NAME' ) ) {
+	define( __NAMESPACE__ . '\PLUGIN_NAME', 'image-color-palette' );
+}
+if ( ! defined( __NAMESPACE__ . '\BUILD_DIR' ) ) {
+	define( __NAMESPACE__ . '\BUILD_DIR', plugins_url( 'build/', __FILE__ ) );
 }
 
 /**
@@ -28,53 +31,52 @@ if ( ! defined( 'IMAGECOLORPALETTE_BUILD_DIR' ) ) {
  *
  * @since 1.0.0
  */
+add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue', 910 );
 function enqueue() {
 
 	wp_enqueue_style(
-		'image-color-palette-css',
-		IMAGECOLORPALETTE_BUILD_DIR . 'image-color-palette.css',
+		PLUGIN_NAME,
+		BUILD_DIR . PLUGIN_NAME . '.css',
 		array(),
-		IMAGECOLORPALETTE_PLUGIN_VERSION
+		PLUGIN_VERSION
 	);
 
 	wp_enqueue_script(
-		'image-color-palette-js',
-		IMAGECOLORPALETTE_BUILD_DIR . 'image-color-palette.js',
+		PLUGIN_NAME,
+		BUILD_DIR . PLUGIN_NAME . '.js',
 		array(
-			'jquery',
 			'lodash',
-			'wp-i18n',
-			'wp-compose',
-			'wp-element',
+			'wp-block-editor',
 			'wp-components',
-			'wp-editor',
-			'wp-edit-post',
-			'wp-plugins',
+			'wp-compose',
 			'wp-data',
+			'wp-edit-post',
+			'wp-element',
+			'wp-hooks',
+			'wp-i18n',
+			'wp-plugins',
 		),
-		IMAGECOLORPALETTE_PLUGIN_VERSION,
+		PLUGIN_VERSION,
 		true // Enqueue in the footer.
 	);
 
 	$data = array(
 		'local'  => array(
 			/* translators: %s: Block attribute. */
-			'paste_to_attribute'         => __( 'Apply color to selected block\'s %s', 'image-color-palette' ),
-			'copy_to_clipboard'          => __( 'Copy color to the clipboard', 'image-color-palette' ),
-			'settings_label'             => __( 'Settings', 'image-color-palette' ),
-			'palette_label'              => __( 'Palette', 'image-color-palette' ),
-			'palette_length_label'       => __( 'Number of palette colors', 'image-color-palette' ),
-			'palette_length_description' => __( 'Number of colors from the image to show in the palette', 'image-color-palette' ),
-			'scheme_label'               => __( 'Color scheme', 'image-color-palette' ),
-			'scheme_description'         => __( 'The selected scheme will appear on the right side of each image color.', 'image-color-palette' ),
-			'click_to_open'              => __( 'Click to open the Media Library and select an image.', 'image-color-palette' ),
-			'instructions_1'             => __( 'Click the button and select an image from the Media Library. A palette of colors should appear below the image.', 'image-color-palette' ),
-			'instructions_2'             => __( 'Click on a color and its menu will open. If there is a block selected that has custom color attributes, options to update them directly from the menu will show (currently, core blocks are supported).', 'image-color-palette' ),
-			'instructions_3'             => __( 'If the color was copied to the clipboard (in HEX format) it can be pasted to the color picker of any block.', 'image-color-palette' ),
-			'instructions_description'   => __( 'Create a color palette based on the colors of an image.', 'image-color-palette' ),
-			'instructions'               => __( 'Instructions', 'image-color-palette' ),
-			'header_image_colors'        => __( 'Image colors', 'image-color-palette' ),
-			'schemes'                    => array(
+			'paste_to_attribute'                  => __( 'Apply to block\'s %s', 'image-color-palette' ),
+			'copy_to_clipboard'                   => __( 'Copy color to the clipboard', 'image-color-palette' ),
+			'settings_label'                      => __( 'Settings', 'image-color-palette' ),
+			'palette_label'                       => __( 'Palette', 'image-color-palette' ),
+			'palette_length_label'                => __( 'Number of palette colors', 'image-color-palette' ),
+			'palette_length_description'          => __( 'Number of colors from the image to show in the palette', 'image-color-palette' ),
+			'scheme_label'                        => __( 'Color scheme', 'image-color-palette' ),
+			'scheme_description'                  => __( 'The selected scheme will appear on the right side of each image color.', 'image-color-palette' ),
+			'click_to_open'                       => __( 'Click to open the Media Library and select an image.', 'image-color-palette' ),
+			'header_image_colors'                 => __( 'Image colors', 'image-color-palette' ),
+			'color_distance_equation_label'       => __( 'Color distance equation', 'image-color-palette' ),
+			'color_distance_equation_description' => __( 'Equation used to calculate the dominant colors of the image.', 'image-color-palette' ),
+			'instructions_description'            => __( 'Create a color palette based on the colors of an image.', 'image-color-palette' ),
+			'schemes'                             => array(
 				'none'          => __( 'No color scheme', 'image-color-palette' ),
 				'analogous'     => __( 'Analogous', 'image-color-palette' ),
 				'monochromatic' => __( 'Monochromatic', 'image-color-palette' ),
@@ -89,19 +91,15 @@ function enqueue() {
 		),
 	);
 
-	wp_localize_script( 'image-color-palette-js', 'icp', $data );
-
+	wp_localize_script( PLUGIN_NAME, 'image_color_palette', $data );
 }
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue' );
 
 /**
  * Load plugin localization.
  *
  * @since 1.0.0
  */
-function localization() {
-
-	load_plugin_textdomain( 'image-color-palette' );
-
-}
 add_action( 'plugins_loaded', __NAMESPACE__ . '\localization' );
+function localization() {
+	load_plugin_textdomain( 'image-color-palette' );
+}

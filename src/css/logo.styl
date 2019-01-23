@@ -2,57 +2,77 @@
  * Logo
  */
 
-$e_deceleration = cubic-bezier(0.0, 0.0, 0.2, 1)
+#editor .components-icon-button:hover .icp-logo
 
-#icp-pinned-logo
-	width 20px
-	height 20px
-	padding 2px
+	.icp-row-1
+	.icp-row-2
+		fill #ffa076!important// Necessary
+	.icp-row-3
+	.icp-row-4
+		fill #b8c9d0!important// Necessary
+	.icp-row-5
+	.icp-row-6
+		fill #7d7876!important// Necessary
 
-.is-toggled
-	#icp-pinned-logo
-		&:before
-			content ""
-			background-color #23282b
-			position absolute
-			top 0
-			left 0
-			right 0
-			bottom 0
-			z-index -1
+#editor .components-icon-button.is-toggled:hover .icp-logo rect
+	fill #fff!important// Necessary
 
-.icp-logo-opacity-10
-	fill-opacity .1
-.icp-logo-opacity-40
-	fill-opacity .4
-.icp-logo-opacity-70
-	fill-opacity .7
++prefix-classes('icp-')
 
-#editor
-	.icp-logo-color-1
-		fill #ffa076
-	.icp-logo-color-2
-		fill #b8c9d0
-	.icp-logo-color-3
-		fill #7d7876
+	.logo
 
-	.components-icon-button:hover
-		.icp-logo-color-1
-			fill #ffa076!important
-		.icp-logo-color-2
-			fill #b8c9d0!important
-		.icp-logo-color-3
-			fill #7d7876!important
+		#editor &
 
-.icp-logo-color
-	transition fill-opacity .2s .1s $e_deceleration
+			&:hover
+				.row-1
+				.row-3
+				.row-5
+					fill-opacity 1
+				.row-2
+				.row-4
+				.row-6
+					fill-opacity .3
 
-.icp-logo-container
-	width 16px
-	height 16px
+			.row-1
+			.row-2
+				fill #ffa076
+			.row-3
+			.row-4
+				fill #b8c9d0
+			.row-5
+			.row-6
+				fill #7d7876
 
-	&:hover
-		.icp-logo-row-1
-			fill-opacity 1
-		.icp-logo-row-2
-			fill-opacity .3
+		.column-1
+
+			&.row-2
+			&.row-4
+			&.row-6
+				fill-opacity .7
+
+		.column-2
+
+			&.row-2
+			&.row-4
+			&.row-6
+				fill-opacity .4
+
+			&.row-1
+			&.row-3
+			&.row-5
+				fill-opacity .7
+
+		.column-3
+
+			&.row-2
+			&.row-4
+			&.row-6
+				fill-opacity .1
+
+			&.row-1
+			&.row-3
+			&.row-5
+				fill-opacity .4
+
+		rect
+			transition fill-opacity .2s $e_standard
