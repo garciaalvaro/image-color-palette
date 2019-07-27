@@ -15,6 +15,7 @@ module.exports = [
 						".*",
 						".*/**",
 						"_extras/**",
+						"_temp.js",
 						"node_modules/**",
 						"package.json",
 						"package-lock.json",
