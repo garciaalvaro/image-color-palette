@@ -1,5 +1,5 @@
 const pkg = require("../package.json");
-const { version, name } = pkg;
+const { name, version } = pkg;
 const getReplace = (search, replace) => ({
 	loader: "string-replace-loader",
 	options: {

@@ -7,13 +7,13 @@ const BannerPlugin = webpack.BannerPlugin;
 const nib = require("nib");
 const DefinePlugin = webpack.DefinePlugin;
 
-const { name: pkg_name, version, plugin_name, plugin_uri } = pkg;
+const { name, description, version, homepage } = pkg;
 
 export default {
 	entry: ["./src/index.ts", "./src/index.styl"],
 	output: {
 		path: __dirname + "/../build",
-		filename: `${pkg_name}.js`
+		filename: `${name}.js`
 	},
 	resolve: {
 		alias: {
@@ -59,11 +59,11 @@ export default {
 			l: (...args) => console.log(...args)
 		}),
 		new MiniCssExtractPlugin({
-			filename: `${pkg_name}.css`
+			filename: `${name}.css`
 		}),
 		new BannerPlugin({
 			banner: [
-				`/*! ${plugin_name} | ${version} | ${plugin_uri} */`,
+				`/*! ${description} | ${version} | ${homepage} */`,
 				"/*! TinyColor | https://github.com/bgrins/TinyColor | Brian Grinstead | MIT License */",
 				"/*! RgbQuant.js | https://github.com/leeoniya/RgbQuant.js | Leon Sorokin | MIT License */"
 			].join(""),
@@ -71,7 +71,7 @@ export default {
 			include: new RegExp(/.*?\.js/)
 		}),
 		new BannerPlugin({
-			banner: `${plugin_name} | ${version} | ${plugin_uri}`,
+			banner: `${description} | ${version} | ${homepage}`,
 			include: new RegExp(/.*?\.css/)
 		})
 	],

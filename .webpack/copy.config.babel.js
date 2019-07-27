@@ -16,11 +16,12 @@ module.exports = [
 						".*/**",
 						"_extras/**",
 						"node_modules/**",
-						"package*",
+						"package.json",
+						"package-lock.json",
 						"pro/**",
 						"src/**",
-						"tsconfig*",
-						"types/**"
+						"tsconfig.json",
+						"types.d.ts"
 					]
 				}
 			])
