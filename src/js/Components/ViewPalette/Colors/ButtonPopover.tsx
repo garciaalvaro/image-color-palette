@@ -36,10 +36,10 @@ export const ButtonPopover: React.ComponentType<OwnProps> = withState<
 
 	return (
 		<Popover
+			containerStyle={{ minWidth: "200px", marginLeft: "-10px" }}
 			isOpen={is_open}
-			position={"top"}
 			onClickOutside={close}
-			transitionDuration={0.1}
+			transitionDuration={0.01}
 			content={({ position, targetRect, popoverRect }) => (
 				<ArrowContainer
 					position={position}
