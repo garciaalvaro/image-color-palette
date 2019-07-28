@@ -3,7 +3,7 @@ Contributors: melonpan
 Tags: blocks, gutenberg, color
 Requires at least: 5.1
 Tested up to: 5.2
-Stable tag: 1.4.0
+Stable tag: 1.4.1
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -23,7 +23,7 @@ It also creates color schemes based on the image colors. Available schemes inclu
 * Brighter
 * Darker
 * Desaturated
-* Saturated"
+* Saturated
 
 The colors can be copied to the clipboard to be pasted in a color picker.
 For registered blocks, when it is selected the plugin permits applying the color to certain block attributes like text or background color.
@@ -62,6 +62,9 @@ Alternatively the Plugin can be opened from the Show More button (the 3 dots on 
 Click the More button and inside the menu list click on the plugin name "Image Color Palette".
 
 == Changelog ==
+
+= 1.4.1 =
+* Fixed bug where no version number was being added to the enqueues.
 
 = 1.4.0 =
 * Added Color distance equation option.
