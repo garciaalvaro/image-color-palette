@@ -14,6 +14,7 @@ interface WithDispatchProps extends Pick<ActionCreators, "setColors"> {}
 
 interface OwnProps {
 	open: Function;
+	just_selected: boolean;
 }
 
 interface Props extends OwnProps, WithSelectProps, WithDispatchProps {}
@@ -37,8 +38,6 @@ export const Image: React.ComponentType<OwnProps> = compose([
 
 		constructor(props: Props) {
 			super(props);
-
-			const { color_distance_equation, color_palette_length } = props;
 
 			this.img = createRef();
 		}
@@ -69,7 +68,7 @@ export const Image: React.ComponentType<OwnProps> = compose([
 
 		render() {
 			const { generatePalette, props } = this;
-			const { open, image_url } = props;
+			const { open, image_url, just_selected } = props;
 
 			return (
 				<Div id="image-container">
@@ -78,7 +77,16 @@ export const Image: React.ComponentType<OwnProps> = compose([
 						id="image"
 						src={image_url}
 						onClick={open}
-						onLoad={generatePalette}
+						onLoad={() => {
+							// We use just_selected to trigger generatePalette
+							// function only when the image has been selected.
+							// Otherwise when switching tabs the onLoad callback would
+							// trigger the function, although the previous palette is
+							// the same.
+							if (just_selected) {
+								generatePalette();
+							}
+						}}
 					/>
 					<Button id="button-open_media" classes="button-icon" onClick={open}>
 						<Icon icon="edit" />
