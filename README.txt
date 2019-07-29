@@ -64,9 +64,10 @@ Click the More button and inside the menu list click on the plugin name "Image C
 == Changelog ==
 
 = 1.4.2 =
+* Monochromatic scheme colors are now sorted by brightness.
 * Fixed small bug which recalculated color palette unnecessarily.
 * Fixed popover menu not appearing with the correct z-index.
-* Raised minimum WordPress version to 5.2.
+* Raised minimum WordPress version to 5.2 to make use of block-editor package.
 
 = 1.4.1 =
 * Fixed bug where no version number was being added to the enqueues.
