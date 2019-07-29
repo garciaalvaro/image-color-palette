@@ -72,7 +72,7 @@ export const ColorRow: React.ComponentType<OwnProps> = compose([
 				case "monochromatic":
 					colors = color.monochromatic(scheme_length + 1);
 					colors = slice(colors, 1);
-					colors = colors.sort((a, b) => (a.toHsl().l < b.toHsl().l ? 1 : -1));
+					colors = colors.sort((a, b) => (a.toHsv().v < b.toHsv().v ? 1 : -1));
 					break;
 
 				case "triad":
