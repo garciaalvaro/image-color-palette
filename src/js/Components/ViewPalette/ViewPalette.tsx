@@ -1,23 +1,30 @@
-import { Div } from "utils/components";
+import { Div, Span } from "utils/components";
 import { pr_store } from "utils/data/plugin";
 import { Media } from "./Media/Media";
 import { Colors } from "./Colors/Colors";
 
-interface WithSelectProps extends Pick<State, "colors"> {}
+interface WithSelectProps extends Pick<State, "colors" | "image_url"> {}
 
 interface Props extends WithSelectProps {}
 
+const { __ } = wp.i18n;
 const { withSelect } = wp.data;
 
 export const ViewPalette: React.ComponentType = withSelect<WithSelectProps>(
 	select => ({
-		colors: select(pr_store).getColors()
+		colors: select(pr_store).getColors(),
+		image_url: select(pr_store).getImageUrl()
 	})
 )((props: Props) => {
-	const { colors } = props;
+	const { colors, image_url } = props;
 
 	return (
 		<Div id="palette">
+			{!colors.length && !!image_url && (
+				<Div id="quantizing">
+					<Span>{__("Quantizing...")}</Span>
+				</Div>
+			)}
 			<Media />
 			{!!colors.length && <Colors />}
 		</Div>
