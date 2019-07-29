@@ -7,7 +7,7 @@ import RgbQuant from "rgbquant";
 interface WithSelectProps
 	extends Pick<
 		State,
-		"color_distance_equation" | "color_palette_length" | "image_url"
+		"colors" | "color_distance_equation" | "color_palette_length" | "image_url"
 	> {}
 
 interface WithDispatchProps extends Pick<ActionCreators, "setColors"> {}
@@ -25,6 +25,7 @@ const { withSelect, withDispatch } = wp.data;
 
 export const Image: React.ComponentType<OwnProps> = compose([
 	withSelect<WithSelectProps>(select => ({
+		colors: select(pr_store).getColors(),
 		color_distance_equation: select(pr_store).getColorDistanceEquation(),
 		color_palette_length: select(pr_store).getColorPaletteLength(),
 		image_url: select(pr_store).getImageUrl()
@@ -68,7 +69,7 @@ export const Image: React.ComponentType<OwnProps> = compose([
 
 		render() {
 			const { generatePalette, props } = this;
-			const { open, image_url, just_selected } = props;
+			const { open, image_url, just_selected, colors } = props;
 
 			return (
 				<Div id="image-container">
@@ -83,7 +84,7 @@ export const Image: React.ComponentType<OwnProps> = compose([
 							// Otherwise when switching tabs the onLoad callback would
 							// trigger the function, although the previous palette is
 							// the same.
-							if (just_selected) {
+							if (just_selected || !colors.length) {
 								generatePalette();
 							}
 						}}

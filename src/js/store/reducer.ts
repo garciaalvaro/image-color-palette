@@ -28,12 +28,14 @@ export const reducer = (
 		case "SET_COLOR_DISTANCE_EQUATION": {
 			return {
 				...state,
+				colors: [],
 				color_distance_equation: action.payload
 			};
 		}
 		case "SET_COLOR_PALETTE_LENGTH": {
 			return {
 				...state,
+				colors: [],
 				color_palette_length: action.payload
 			};
 		}
@@ -46,6 +48,7 @@ export const reducer = (
 		case "SET_IMAGE_ID": {
 			return {
 				...state,
+				colors: [],
 				image_id: action.payload
 			};
 		}
