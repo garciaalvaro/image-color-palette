@@ -9,6 +9,9 @@ declare const image_color_palette: {
 	local: any;
 };
 
+// rgbquant
+declare module "rgbquant";
+
 // Wordpress
 declare const wp: {
 	blockEditor: typeof import("wordpress__block-editor");
@@ -30,6 +33,12 @@ interface Object {
 // https://stackoverflow.com/a/49286056 | CC BY-SA 3.0
 type ValueOf<T> = T[keyof T];
 
+interface ComponentProps extends Object {
+	children?: React.ReactNode;
+	id?: string | null;
+	className?: string | null | (string | null)[] | undefined;
+}
+
 interface SetStateProp {
 	setState(obj: any): void;
 }
@@ -46,12 +55,12 @@ type ColorScheme =
 	| "desaturated"
 	| "saturated";
 
-type Action<T, P = null> = {
+type Action<T, P> = {
 	type: T;
-	payload?: P;
+	payload: P;
 };
 
-type ActionCreator<T, P = null> = (payload?: P) => Action<T, P>;
+type ActionCreator<T, P> = (payload: P) => Action<T, P>;
 
 type Selector<T, P = null> = (state: State, parameter: P) => T;
 

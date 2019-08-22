@@ -15,13 +15,12 @@ export default {
 	},
 	resolve: {
 		alias: {
-			Components: __dirname + "/../src/js/Components",
-			utils: __dirname + "/../src/js/utils",
-			store: __dirname + "/../src/js/store"
+			Components: __dirname + "/../src/Components",
+			utils: __dirname + "/../src/utils",
+			store: __dirname + "/../src/store"
 		}
 	},
 	externals: {
-		image_color_palette: "image_color_palette",
 		lodash: "lodash",
 		react: "React",
 		"react-dom": "ReactDOM"
