@@ -15,8 +15,11 @@ interface IconProps {
 	icon: keyof Icons;
 }
 
-export const Icon: React.ComponentType<IconProps> = props =>
-	icons[props.icon] ? icons[props.icon] : null;
+const { Fragment } = wp.element;
+
+export const Icon: React.ComponentType<IconProps> = props => (
+	<Fragment>{icons[props.icon] ? icons[props.icon] : null}</Fragment>
+);
 
 export const Div: React.ComponentType<ComponentProps> = props => (
 	<HTML {...props} html_tag="div" />
@@ -57,7 +60,11 @@ const HTML: React.ComponentType<HTMLProps> = props_raw => {
 			break;
 
 		case "button":
-			return <button {...props}>{children}</button>;
+			return (
+				<button type="button" {...props}>
+					{children}
+				</button>
+			);
 			break;
 
 		case "h3":
