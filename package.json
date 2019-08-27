@@ -25,7 +25,7 @@
 		"@babel/preset-react": "^7.0.0",
 		"@babel/preset-typescript": "^7.3.3",
 		"@babel/register": "^7.5.5",
-		"@types/lodash": "^4.14.137",
+		"@types/lodash": "^4.14.138",
 		"@types/node": "^12.7.2",
 		"@types/tinycolor2": "^1.4.2",
 		"@types/wordpress__block-editor": "^2.2.2",
@@ -51,7 +51,7 @@
 		"stylus": "^0.54.7",
 		"stylus-loader": "^3.0.2",
 		"typescript": "^3.5.3",
-		"webpack": "^4.39.2",
+		"webpack": "^4.39.3",
 		"webpack-cli": "^3.3.7"
 	}
 }
