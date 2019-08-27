@@ -8,10 +8,7 @@ const initial_state: State = {
 	image_url: ""
 };
 
-export const reducer = (
-	state = initial_state,
-	action: ReturnType<ValueOf<ActionCreators>>
-) => {
+export const reducer = (state = initial_state, action: Actions) => {
 	switch (action.type) {
 		case "SET_VIEW": {
 			return {
