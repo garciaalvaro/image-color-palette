@@ -4,9 +4,11 @@ import { actions } from "store/actions";
 import { selectors } from "store/selectors";
 
 wp.data.registerStore(pr_store, {
-	reducer: reducer as any,
-	actions: actions as ActionCreators & Object,
-	selectors: selectors as Selectors & Object,
 	// @ts-ignore
+	reducer,
+	// @ts-ignore
+	actions,
+	// @ts-ignore
+	selectors,
 	persist: ["color_palette_length", "color_scheme", "color_distance_equation"]
 });
