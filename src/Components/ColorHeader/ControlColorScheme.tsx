@@ -1,6 +1,5 @@
-import { pr_store } from "utils/data";
+import { pr_store, color_schemes } from "utils/data";
 import { addPrefix } from "utils/tools";
-import { color_schemes } from "utils/data/color_schemes";
 
 interface WithSelectProps extends Pick<State, "color_scheme"> {}
 

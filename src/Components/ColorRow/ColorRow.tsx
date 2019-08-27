@@ -27,6 +27,7 @@ const { times, slice } = lodash;
 const { Component } = wp.element;
 const { withState, compose } = wp.compose;
 const { withSelect } = wp.data;
+
 const getColorType = (color: tinycolor.Instance) =>
 	tinycolor.isReadable("#000", color, {
 		level: "AA",
