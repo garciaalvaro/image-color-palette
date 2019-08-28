@@ -1,4 +1,4 @@
-import { prepareProps } from "utils/tools";
+import { prepareProps } from "utils/tools/prepareProps";
 
 export const ImgRef = wp.element.forwardRef<HTMLImageElement, ComponentProps>(
 	(props, ref) => {

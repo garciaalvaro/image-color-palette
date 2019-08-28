@@ -1,4 +1,4 @@
-import { addPrefix } from "utils/tools";
+import { addPrefix } from "utils/tools/addPrefix";
 
 export type Icons = Record<
 	"image" | "edit" | "color_picker" | "border" | "fill" | "text" | "logo",

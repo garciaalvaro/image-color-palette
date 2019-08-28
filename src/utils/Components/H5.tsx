@@ -1,4 +1,4 @@
-import { prepareProps } from "utils/tools";
+import { prepareProps } from "utils/tools/prepareProps";
 
 export const H5: React.ComponentType<ComponentProps> = props => {
 	const { children, ...rest } = props;
