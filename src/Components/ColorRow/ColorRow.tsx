@@ -1,6 +1,6 @@
 import tinycolor from "tinycolor2";
 
-import { pr_store } from "utils/data";
+import { store_prefix } from "utils/data";
 import { Div } from "utils/Components";
 import { ColorRowButton } from "./ColorRowButton";
 
@@ -44,7 +44,7 @@ export const ColorRow: React.ComponentType<OwnProps> = compose([
 		scheme_colors_type: []
 	}),
 	withSelect<WithSelectProps>(select => ({
-		color_scheme: select(pr_store).getColorScheme()
+		color_scheme: select(store_prefix).getColorScheme()
 	}))
 ])(
 	class extends Component<Props> {

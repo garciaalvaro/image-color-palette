@@ -1,6 +1,6 @@
 import RgbQuant from "rgbquant";
 
-import { pr_store, rgbquant_options } from "utils/data";
+import { store_prefix, rgbquant_options } from "utils/data";
 import { Div, Button, Icon, ImgRef } from "utils/Components";
 
 interface WithSelectProps
@@ -24,13 +24,13 @@ const { withSelect, withDispatch } = wp.data;
 
 export const MediaImage: React.ComponentType<OwnProps> = compose([
 	withSelect<WithSelectProps>(select => ({
-		colors: select(pr_store).getColors(),
-		color_distance_equation: select(pr_store).getColorDistanceEquation(),
-		color_palette_length: select(pr_store).getColorPaletteLength(),
-		image_url: select(pr_store).getImageUrl()
+		colors: select(store_prefix).getColors(),
+		color_distance_equation: select(store_prefix).getColorDistanceEquation(),
+		color_palette_length: select(store_prefix).getColorPaletteLength(),
+		image_url: select(store_prefix).getImageUrl()
 	})),
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setColors: dispatch(pr_store).setColors
+		setColors: dispatch(store_prefix).setColors
 	}))
 ])(
 	class extends Component<Props> {

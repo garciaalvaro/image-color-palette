@@ -1,5 +1,5 @@
 import { addPrefix } from "utils/tools";
-import { pr_store } from "utils/data";
+import { store_prefix } from "utils/data";
 
 interface WithSelectProps extends Pick<State, "color_palette_length"> {}
 
@@ -18,10 +18,10 @@ const {
 
 export const ControlPaletteLength: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({
-		color_palette_length: select(pr_store).getColorPaletteLength()
+		color_palette_length: select(store_prefix).getColorPaletteLength()
 	})),
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setColorPaletteLength: dispatch(pr_store).setColorPaletteLength
+		setColorPaletteLength: dispatch(store_prefix).setColorPaletteLength
 	}))
 ])((props: Props) => {
 	const { setColorPaletteLength, color_palette_length } = props;

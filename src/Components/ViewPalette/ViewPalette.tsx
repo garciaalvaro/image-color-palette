@@ -1,5 +1,5 @@
 import { Div, Span } from "utils/Components";
-import { pr_store } from "utils/data";
+import { store_prefix } from "utils/data";
 import { Media } from "../Media/Media";
 import { Colors } from "../Colors/Colors";
 
@@ -12,8 +12,8 @@ const { withSelect } = wp.data;
 
 export const ViewPalette: React.ComponentType = withSelect<WithSelectProps>(
 	select => ({
-		colors: select(pr_store).getColors(),
-		image_url: select(pr_store).getImageUrl()
+		colors: select(store_prefix).getColors(),
+		image_url: select(store_prefix).getImageUrl()
 	})
 )((props: Props) => {
 	const { colors, image_url } = props;

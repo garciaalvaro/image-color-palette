@@ -1,5 +1,5 @@
 import { Div } from "utils/Components";
-import { pr_store } from "utils/data";
+import { store_prefix } from "utils/data";
 import { MediaImage } from "./MediaImage";
 import { MediaPlaceholder } from "./MediaPlaceholder";
 
@@ -25,11 +25,11 @@ const { withSelect, withDispatch } = wp.data;
 export const Media: React.ComponentType = compose([
 	withState<WithStateProps>({ just_selected: false }),
 	withSelect<WithSelectProps>(select => ({
-		image_id: select(pr_store).getImageId()
+		image_id: select(store_prefix).getImageId()
 	})),
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setImageId: dispatch(pr_store).setImageId,
-		setImageUrl: dispatch(pr_store).setImageUrl
+		setImageId: dispatch(store_prefix).setImageId,
+		setImageUrl: dispatch(store_prefix).setImageUrl
 	}))
 ])((props: Props) => {
 	const { image_id, setImageId, setImageUrl, just_selected, setState } = props;

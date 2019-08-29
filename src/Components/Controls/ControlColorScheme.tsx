@@ -1,4 +1,4 @@
-import { color_schemes, pr_store } from "utils/data";
+import { color_schemes, store_prefix } from "utils/data";
 import { addPrefix } from "utils/tools";
 
 interface WithSelectProps extends Pick<State, "color_scheme"> {}
@@ -17,10 +17,10 @@ const {
 
 export const ControlColorScheme: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({
-		color_scheme: select(pr_store).getColorScheme()
+		color_scheme: select(store_prefix).getColorScheme()
 	})),
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setColorScheme: dispatch(pr_store).setColorScheme
+		setColorScheme: dispatch(store_prefix).setColorScheme
 	}))
 ])((props: Props) => {
 	const { setColorScheme, color_scheme } = props;
