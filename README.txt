@@ -25,7 +25,7 @@ It also creates color schemes based on the image colors. Available schemes inclu
 * Desaturated
 * Saturated
 
-The colors can be copied to the clipboard to be pasted in a color picker.
+The colors can be copied to the clipboard and pasted in a color picker.
 When a registered block is selected the plugin permits applying the color to certain block attributes like text or background color.
 
 == Screenshots ==
