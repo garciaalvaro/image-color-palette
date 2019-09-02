@@ -3,27 +3,19 @@ import { store_slug } from "utils/data";
 import { MediaImage } from "./MediaImage";
 import { MediaPlaceholder } from "./MediaPlaceholder";
 
-interface WithStateProps {
-	just_selected: boolean;
-}
-
 interface WithSelectProps extends Pick<State, "image_id"> {}
 
 interface WithDispatchProps
 	extends Pick<ActionCreators, "setImageId" | "setImageUrl"> {}
 
-interface Props
-	extends WithSelectProps,
-		WithDispatchProps,
-		WithStateProps,
-		SetStateProp {}
+interface Props extends WithSelectProps, WithDispatchProps {}
 
 const { MediaUpload } = wp.blockEditor;
-const { compose, withState } = wp.compose;
+const { compose } = wp.compose;
+const { useState } = wp.element;
 const { withSelect, withDispatch } = wp.data;
 
 export const Media: React.ComponentType = compose([
-	withState<WithStateProps>({ just_selected: false }),
 	withSelect<WithSelectProps>(select => ({
 		image_id: select(store_slug).getImageId()
 	})),
@@ -32,7 +24,8 @@ export const Media: React.ComponentType = compose([
 		setImageUrl: dispatch(store_slug).setImageUrl
 	}))
 ])((props: Props) => {
-	const { image_id, setImageId, setImageUrl, just_selected, setState } = props;
+	const { image_id, setImageId, setImageUrl } = props;
+	const [just_selected, setJustSelected] = useState(false);
 
 	return (
 		<Div id="media">
@@ -55,7 +48,7 @@ export const Media: React.ComponentType = compose([
 						sizes.thumbnail;
 
 					if (size) {
-						setState({ just_selected: true });
+						setJustSelected(true);
 						setImageId(id);
 						setImageUrl(size.url);
 					}
