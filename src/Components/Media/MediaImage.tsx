@@ -18,7 +18,7 @@ interface OwnProps {
 
 interface Props extends OwnProps, WithSelectProps, WithDispatchProps {}
 
-const { Component, createRef } = wp.element;
+const { useRef } = wp.element;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 
@@ -32,67 +32,55 @@ export const MediaImage: React.ComponentType<OwnProps> = compose([
 	withDispatch<WithDispatchProps>(dispatch => ({
 		setColors: dispatch(store_slug).setColors
 	}))
-])(
-	class extends Component<Props> {
-		private img: React.RefObject<HTMLImageElement>;
+])((props: Props) => {
+	const img_ref = useRef<HTMLImageElement>(null);
+	const {
+		open,
+		image_url,
+		just_selected,
+		colors,
+		setColors,
+		color_palette_length,
+		color_distance_equation
+	} = props;
+	const generatePalette = () => {
+		const rgbquant = new RgbQuant({
+			...rgbquant_options,
+			colors: color_palette_length,
+			colorDist: color_distance_equation
+		});
 
-		constructor(props: Props) {
-			super(props);
+		rgbquant.sample(img_ref.current);
 
-			this.img = createRef();
-		}
+		const palette = rgbquant.palette(true, true);
+		const palette_prepared = palette.map(
+			([r, g, b]: [number, number, number]) => `rgb(${r},${g},${b})`
+		);
 
-		generatePalette = () => {
-			const { img, props } = this;
-			const {
-				setColors,
-				color_palette_length,
-				color_distance_equation
-			} = props;
+		setColors(palette_prepared);
+	};
 
-			const rgbquant = new RgbQuant({
-				...rgbquant_options,
-				colors: color_palette_length,
-				colorDist: color_distance_equation
-			});
-
-			rgbquant.sample(img.current);
-
-			const palette = rgbquant.palette(true, true);
-			const palette_prepared = palette.map(
-				([r, g, b]: [number, number, number]) => `rgb(${r},${g},${b})`
-			);
-
-			setColors(palette_prepared);
-		};
-
-		render() {
-			const { generatePalette, props } = this;
-			const { open, image_url, just_selected, colors } = props;
-
-			return (
-				<Div id="image-container">
-					<ImgRef
-						ref={this.img}
-						id="image"
-						src={image_url}
-						onClick={open}
-						onLoad={() => {
-							// We use just_selected to trigger generatePalette
-							// function only when the image has been selected.
-							// Otherwise when switching tabs the onLoad callback would
-							// trigger the function, although the previous palette is
-							// the same.
-							if (just_selected || !colors.length) {
-								generatePalette();
-							}
-						}}
-					/>
-					<Button id="button-open_media" className="button-icon" onClick={open}>
-						<Icon icon="edit" />
-					</Button>
-				</Div>
-			);
-		}
-	}
-);
+	return (
+		<Div id="image-container">
+			<ImgRef
+				ref={img_ref}
+				id="image"
+				src={image_url}
+				onClick={open}
+				onLoad={() => {
+					// We use just_selected to trigger generatePalette
+					// function only when the image has been selected.
+					// Otherwise when switching tabs the onLoad callback would
+					// trigger the function, although the previous palette is
+					// the same.
+					if (just_selected || !colors.length) {
+						generatePalette();
+					}
+				}}
+			/>
+			<Button id="button-open_media" className="button-icon" onClick={open}>
+				<Icon icon="edit" />
+			</Button>
+		</Div>
+	);
+});
