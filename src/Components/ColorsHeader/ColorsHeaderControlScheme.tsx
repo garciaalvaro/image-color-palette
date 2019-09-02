@@ -1,4 +1,4 @@
-import { store_prefix, color_schemes } from "utils/data";
+import { store_slug, color_schemes } from "utils/data";
 import { addPrefix } from "utils/tools";
 
 interface WithSelectProps extends Pick<State, "color_scheme"> {}
@@ -13,10 +13,10 @@ const { SelectControl } = wp.components;
 
 export const ColorsHeaderControlScheme: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({
-		color_scheme: select(store_prefix).getColorScheme()
+		color_scheme: select(store_slug).getColorScheme()
 	})),
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setColorScheme: dispatch(store_prefix).setColorScheme
+		setColorScheme: dispatch(store_slug).setColorScheme
 	}))
 ])((props: Props) => {
 	const { color_scheme, setColorScheme } = props;

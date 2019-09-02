@@ -1,4 +1,4 @@
-import { store_prefix } from "utils/data";
+import { store_slug } from "utils/data";
 import { addPrefix } from "utils/tools";
 
 interface WithSelectProps extends Pick<State, "color_distance_equation"> {}
@@ -27,10 +27,10 @@ const options: Option[] = [
 
 export const ControlColorDistance: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({
-		color_distance_equation: select(store_prefix).getColorDistanceEquation()
+		color_distance_equation: select(store_slug).getColorDistanceEquation()
 	})),
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setColorDistanceEquation: dispatch(store_prefix).setColorDistanceEquation
+		setColorDistanceEquation: dispatch(store_slug).setColorDistanceEquation
 	}))
 ])((props: Props) => {
 	const { setColorDistanceEquation, color_distance_equation } = props;

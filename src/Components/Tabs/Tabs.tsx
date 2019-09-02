@@ -1,5 +1,5 @@
 import { Div, Button } from "utils/Components";
-import { store_prefix } from "utils/data";
+import { store_slug } from "utils/data";
 
 interface WithSelectProps extends Pick<State, "view"> {}
 
@@ -22,10 +22,10 @@ const tabs: Tab[] = [
 
 export const Tabs: React.ComponentType = compose([
 	withDispatch<WithDispatchProps>(dispatch => ({
-		setView: dispatch(store_prefix).setView
+		setView: dispatch(store_slug).setView
 	})),
 	withSelect<WithSelectProps>(select => ({
-		view: select(store_prefix).getView()
+		view: select(store_slug).getView()
 	}))
 ])((props: Props) => {
 	const { view, setView } = props;

@@ -1,5 +1,5 @@
 import { Div } from "utils/Components";
-import { store_prefix } from "utils/data";
+import { store_slug } from "utils/data";
 import { ColorRow } from "../ColorRow/ColorRow";
 import { ColorsHeader } from "../ColorsHeader/ColorsHeader";
 
@@ -9,7 +9,7 @@ const { withSelect } = wp.data;
 
 export const Colors: React.ComponentType = withSelect<WithSelectProps>(
 	select => ({
-		colors: select(store_prefix).getColors()
+		colors: select(store_slug).getColors()
 	})
 )(props => {
 	const { colors } = props;
