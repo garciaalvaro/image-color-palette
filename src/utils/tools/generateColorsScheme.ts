@@ -2,7 +2,7 @@ import tinycolor from "tinycolor2";
 
 const { times, slice } = lodash;
 
-const getColorType = (color: tinycolor.Instance) =>
+const getColorType = (color: tinycolor.Instance): "light" | "dark" =>
 	tinycolor.isReadable("#000", color, {
 		level: "AA",
 		size: "large"
