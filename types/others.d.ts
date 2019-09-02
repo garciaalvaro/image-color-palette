@@ -4,10 +4,6 @@ interface ComponentProps extends Object {
 	className?: string | null | (string | null)[] | undefined;
 }
 
-interface SetStateProp {
-	setState(obj: any): void;
-}
-
 type ColorScheme =
 	| "none"
 	| "analogous"
