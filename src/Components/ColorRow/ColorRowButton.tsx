@@ -2,38 +2,20 @@ import Popover, { ArrowContainer } from "react-tiny-popover";
 
 import { Span, Button } from "utils/Components";
 import { ColorRowMenu } from "./ColorRowMenu";
+import { useToggle } from "utils/hooks";
 
-interface WithStateProps {
-	is_open: boolean;
-}
-
-interface OwnProps {
+interface Props {
 	button_extra_className: string | string[];
 	color: string;
 	color_type: string;
 	label?: string;
 }
 
-interface Props extends OwnProps, WithStateProps, SetStateProp {}
-
 const { castArray } = lodash;
-const { withState } = wp.compose;
 
-export const ColorRowButton: React.ComponentType<OwnProps> = withState<
-	WithStateProps
->({
-	is_open: false
-})((props: Props) => {
-	const {
-		label,
-		button_extra_className,
-		color,
-		color_type,
-		is_open,
-		setState
-	} = props;
-	const close = () => setState({ is_open: false });
-	const toggle = () => setState({ is_open: !is_open });
+export const ColorRowButton: React.ComponentType<Props> = props => {
+	const { label, button_extra_className, color, color_type } = props;
+	const { is_open, close, toggle } = useToggle();
 
 	return (
 		<Popover
@@ -71,4 +53,4 @@ export const ColorRowButton: React.ComponentType<OwnProps> = withState<
 			</Button>
 		</Popover>
 	);
-});
+};
