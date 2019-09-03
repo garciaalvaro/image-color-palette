@@ -20,13 +20,9 @@ interface OwnProps {
 
 interface Props extends OwnProps, WithDispatchProps, WithSelectProps {}
 
-const { sprintf } = wp.i18n;
+const { __, sprintf } = wp.i18n;
 const { withDispatch, withSelect } = wp.data;
 const { compose } = wp.compose;
-const {
-	copy_to_clipboard,
-	paste_to_attribute
-} = (window as any).image_color_palette.local;
 
 export const ColorRowMenu: React.ComponentType<OwnProps> = compose([
 	withSelect<WithSelectProps>(select => ({
@@ -51,7 +47,7 @@ export const ColorRowMenu: React.ComponentType<OwnProps> = compose([
 					<Div className="menu-icon">
 						<Icon icon="color_picker" />
 					</Div>
-					<Span>{copy_to_clipboard}</Span>
+					<Span>{__("Copy color to the clipboard")}</Span>
 				</Button>
 				{selected_block &&
 					block_types[selected_block.name] &&
@@ -70,7 +66,10 @@ export const ColorRowMenu: React.ComponentType<OwnProps> = compose([
 								<Div className="menu-icon">
 									<Icon icon={icon} />
 								</Div>
-								<Span>{sprintf(paste_to_attribute, label)}</Span>
+								<Span>
+									{/* translators: %s: Block attribute. */
+									sprintf(__("Apply to block's %s"), label)}
+								</Span>
 							</Button>
 						)
 					)}

@@ -1,7 +1,7 @@
 import { Icon, Div, H3, Span } from "utils/Components";
 import { plugin_title } from "utils/data";
 
-const { instructions_description } = (window as any).image_color_palette.local;
+const { __ } = wp.i18n;
 
 export const ControlPluginInfo: React.ComponentType = props => {
 	return (
@@ -11,7 +11,9 @@ export const ControlPluginInfo: React.ComponentType = props => {
 			</Div>
 			<Div id="info-container">
 				<H3 id="info-name">{plugin_title}</H3>
-				<Span id="info-description">{instructions_description}</Span>
+				<Span id="info-description">
+					{__("Create a color palette based on the colors of an image.")}
+				</Span>
 			</Div>
 		</Div>
 	);

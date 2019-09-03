@@ -4,11 +4,6 @@ declare const l: Function;
 // Lodash
 declare const lodash: typeof import("lodash");
 
-// Lodash
-declare const image_color_palette: {
-	local: any;
-};
-
 // rgbquant
 declare module "rgbquant";
 

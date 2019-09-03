@@ -1,31 +1,20 @@
-const {
-	none,
-	analogous,
-	monochromatic,
-	triad,
-	complementary,
-	lighter,
-	brighter,
-	darker,
-	desaturated,
-	saturated
-} = (window as any).image_color_palette.local.schemes;
+const { __ } = wp.i18n;
 
 export const color_schemes: {
 	label: string;
 	value: ColorScheme;
 }[] = [
-	{ label: none, value: "none" },
-	{ label: analogous, value: "analogous" },
+	{ label: __("No color scheme"), value: "none" },
+	{ label: __("Analogous"), value: "analogous" },
 	{
-		label: monochromatic,
+		label: __("Monochromatic"),
 		value: "monochromatic"
 	},
-	{ label: triad, value: "triad" },
-	{ label: complementary, value: "complementary" },
-	{ label: lighter, value: "lighter" },
-	{ label: brighter, value: "brighter" },
-	{ label: darker, value: "darker" },
-	{ label: desaturated, value: "desaturated" },
-	{ label: saturated, value: "saturated" }
+	{ label: __("Triad"), value: "triad" },
+	{ label: __("Complementary"), value: "complementary" },
+	{ label: __("Lighter"), value: "lighter" },
+	{ label: __("Brighter"), value: "brighter" },
+	{ label: __("Darker"), value: "darker" },
+	{ label: __("Desaturated"), value: "desaturated" },
+	{ label: __("Saturated"), value: "saturated" }
 ];

@@ -59,39 +59,6 @@ function enqueue() {
 		PLUGIN_VERSION,
 		true // Enqueue in the footer.
 	);
-
-	$data = array(
-		'local'  => array(
-			/* translators: %s: Block attribute. */
-			'paste_to_attribute'                  => __( 'Apply to block\'s %s', 'image-color-palette' ),
-			'copy_to_clipboard'                   => __( 'Copy color to the clipboard', 'image-color-palette' ),
-			'settings_label'                      => __( 'Settings', 'image-color-palette' ),
-			'palette_label'                       => __( 'Palette', 'image-color-palette' ),
-			'palette_length_label'                => __( 'Number of palette colors', 'image-color-palette' ),
-			'palette_length_description'          => __( 'Number of colors from the image to show in the palette', 'image-color-palette' ),
-			'scheme_label'                        => __( 'Color scheme', 'image-color-palette' ),
-			'scheme_description'                  => __( 'The selected scheme will appear on the right side of each image color.', 'image-color-palette' ),
-			'click_to_open'                       => __( 'Click to open the Media Library and select an image.', 'image-color-palette' ),
-			'header_image_colors'                 => __( 'Image colors', 'image-color-palette' ),
-			'color_distance_equation_label'       => __( 'Color distance equation', 'image-color-palette' ),
-			'color_distance_equation_description' => __( 'Equation used to calculate the dominant colors of the image.', 'image-color-palette' ),
-			'instructions_description'            => __( 'Create a color palette based on the colors of an image.', 'image-color-palette' ),
-			'schemes'                             => array(
-				'none'          => __( 'No color scheme', 'image-color-palette' ),
-				'analogous'     => __( 'Analogous', 'image-color-palette' ),
-				'monochromatic' => __( 'Monochromatic', 'image-color-palette' ),
-				'triad'         => __( 'Triad', 'image-color-palette' ),
-				'complementary' => __( 'Complementary', 'image-color-palette' ),
-				'lighter'       => __( 'Lighter', 'image-color-palette' ),
-				'brighter'      => __( 'Brighter', 'image-color-palette' ),
-				'darker'        => __( 'Darker', 'image-color-palette' ),
-				'desaturated'   => __( 'Desaturated', 'image-color-palette' ),
-				'saturated'     => __( 'Saturated', 'image-color-palette' ),
-			),
-		),
-	);
-
-	wp_localize_script( PLUGIN_NAME, 'image_color_palette', $data );
 }
 
 /**
