@@ -8,13 +8,10 @@ interface WithDispatchProps
 
 interface Props extends WithSelectProps, WithDispatchProps {}
 
+const { __ } = wp.i18n;
 const { compose } = wp.compose;
 const { withSelect, withDispatch } = wp.data;
 const { RangeControl } = wp.components;
-const {
-	palette_length_label,
-	palette_length_description
-} = (window as any).image_color_palette.local;
 
 export const ControlPaletteLength: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({
@@ -33,8 +30,8 @@ export const ControlPaletteLength: React.ComponentType = compose([
 				"control-range",
 				"color_palette_length"
 			])}
-			label={palette_length_label}
-			help={palette_length_description}
+			label={__("Number of palette colors")}
+			help={__("Number of colors from the image to show in the palette")}
 			value={color_palette_length}
 			min={5}
 			max={15}

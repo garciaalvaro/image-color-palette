@@ -4,7 +4,7 @@ interface Props {
 	open: Function;
 }
 
-const { click_to_open } = (window as any).image_color_palette.local;
+const { __ } = wp.i18n;
 
 export const MediaPlaceholder: React.ComponentType<Props> = props => {
 	const { open } = props;
@@ -15,7 +15,9 @@ export const MediaPlaceholder: React.ComponentType<Props> = props => {
 				<Icon icon="image" />
 			</Div>
 			<Div id="placeholder-description">
-				<Span>{click_to_open}</Span>
+				<Span>
+					{__("Click to open the Media Library and select an image.")}
+				</Span>
 			</Div>
 		</Div>
 	);
