@@ -1,3 +1,8 @@
+import { __ } from "@wordpress/i18n";
+import { compose } from "@wordpress/compose";
+import { RadioControl } from "@wordpress/components";
+import { withSelect, withDispatch } from "@wordpress/data";
+
 import { store_slug } from "utils/data";
 import { addPrefix } from "utils/tools";
 
@@ -13,10 +18,6 @@ interface Option {
 	label: string;
 }
 
-const { __ } = wp.i18n;
-const { compose } = wp.compose;
-const { withSelect, withDispatch } = wp.data;
-const { RadioControl } = wp.components;
 const options: Option[] = [
 	{ value: "manhattan", label: "Manhattan" },
 	{ value: "euclidean", label: "Euclidean" }

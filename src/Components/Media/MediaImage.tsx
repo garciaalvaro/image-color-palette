@@ -1,3 +1,6 @@
+import { compose } from "@wordpress/compose";
+import { useRef } from "@wordpress/element";
+import { withSelect, withDispatch } from "@wordpress/data";
 import RgbQuant from "rgbquant";
 
 import { store_slug, rgbquant_options } from "utils/data";
@@ -17,10 +20,6 @@ interface OwnProps {
 }
 
 interface Props extends OwnProps, WithSelectProps, WithDispatchProps {}
-
-const { useRef } = wp.element;
-const { compose } = wp.compose;
-const { withSelect, withDispatch } = wp.data;
 
 export const MediaImage: React.ComponentType<OwnProps> = compose([
 	withSelect<WithSelectProps>(select => ({

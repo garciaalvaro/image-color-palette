@@ -1,10 +1,10 @@
+import { __ } from "@wordpress/i18n";
+
 import { Div, Span, Icon } from "utils/Components";
 
 interface Props {
 	open: Function;
 }
-
-const { __ } = wp.i18n;
 
 export const MediaPlaceholder: React.ComponentType<Props> = props => {
 	const { open } = props;

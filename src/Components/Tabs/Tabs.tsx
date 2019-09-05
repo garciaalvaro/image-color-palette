@@ -1,3 +1,7 @@
+import { __ } from "@wordpress/i18n";
+import { compose } from "@wordpress/compose";
+import { withSelect, withDispatch } from "@wordpress/data";
+
 import { Div, Button } from "utils/Components";
 import { store_slug } from "utils/data";
 
@@ -12,9 +16,6 @@ interface Tab {
 	label: string;
 }
 
-const { __ } = wp.i18n;
-const { withSelect, withDispatch } = wp.data;
-const { compose } = wp.compose;
 const tabs: Tab[] = [
 	{ value: "palette", label: __("Palette") },
 	{ value: "settings", label: __("Settings") }

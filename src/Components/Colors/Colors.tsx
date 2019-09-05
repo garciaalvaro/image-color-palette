@@ -1,11 +1,11 @@
+import { withSelect } from "@wordpress/data";
+
 import { Div } from "utils/Components";
 import { store_slug } from "utils/data";
 import { ColorRow } from "../ColorRow/ColorRow";
 import { ColorsHeader } from "../ColorsHeader/ColorsHeader";
 
 interface WithSelectProps extends Pick<State, "colors"> {}
-
-const { withSelect } = wp.data;
 
 export const Colors: React.ComponentType = withSelect<WithSelectProps>(
 	select => ({

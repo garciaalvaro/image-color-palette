@@ -1,3 +1,6 @@
+import { __, sprintf } from "@wordpress/i18n";
+import { withSelect, withDispatch } from "@wordpress/data";
+import { compose } from "@wordpress/compose";
 import copy from "copy-text-to-clipboard";
 
 import { block_types } from "utils/data";
@@ -19,10 +22,6 @@ interface OwnProps {
 }
 
 interface Props extends OwnProps, WithDispatchProps, WithSelectProps {}
-
-const { __, sprintf } = wp.i18n;
-const { withDispatch, withSelect } = wp.data;
-const { compose } = wp.compose;
 
 export const ColorRowMenu: React.ComponentType<OwnProps> = compose([
 	withSelect<WithSelectProps>(select => ({

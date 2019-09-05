@@ -1,12 +1,13 @@
+import { __ } from "@wordpress/i18n";
+import { applyFilters } from "@wordpress/hooks";
+
 type BlockTypeColorAttributes = Record<
 	string,
 	{ label: string; attribute: string; icon: "fill" | "text" | "border" }[]
 >;
 
-const { __ } = wp.i18n;
-
 export const block_types: BlockTypeColorAttributes = {
-	...wp.hooks.applyFilters("imageColorPalette.addBlockTypeColorAttributes", {}),
+	...applyFilters("imageColorPalette.addBlockTypeColorAttributes", {}),
 	"core/group": [
 		{
 			label: __("Background Color"),

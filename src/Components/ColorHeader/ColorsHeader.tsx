@@ -1,7 +1,7 @@
+import { __ } from "@wordpress/i18n";
+
 import { Div, H5, Span } from "utils/Components";
 import { ControlColorScheme } from "./ControlColorScheme";
-
-const { __ } = wp.i18n;
 
 export const ColorsHeader: React.ComponentType = props => {
 	return (

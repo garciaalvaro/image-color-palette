@@ -1,3 +1,6 @@
+import { useState, useEffect } from "@wordpress/element";
+import { withSelect } from "@wordpress/data";
+
 import { generateColorsScheme } from "utils/tools";
 import { store_slug } from "utils/data";
 import { Div } from "utils/Components";
@@ -8,9 +11,6 @@ interface WithSelectProps extends Pick<State, "color_scheme"> {}
 interface OwnProps {
 	color: string;
 }
-
-const { useState, useEffect } = wp.element;
-const { withSelect } = wp.data;
 
 export const ColorRow: React.ComponentType<OwnProps> = withSelect<
 	WithSelectProps,

@@ -1,3 +1,8 @@
+import { compose } from "@wordpress/compose";
+import { useState } from "@wordpress/element";
+import { MediaUpload } from "@wordpress/block-editor";
+import { withSelect, withDispatch } from "@wordpress/data";
+
 import { Div } from "utils/Components";
 import { store_slug } from "utils/data";
 import { MediaImage } from "./MediaImage";
@@ -9,11 +14,6 @@ interface WithDispatchProps
 	extends Pick<ActionCreators, "setImageId" | "setImageUrl"> {}
 
 interface Props extends WithSelectProps, WithDispatchProps {}
-
-const { MediaUpload } = wp.blockEditor;
-const { compose } = wp.compose;
-const { useState } = wp.element;
-const { withSelect, withDispatch } = wp.data;
 
 export const Media: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({

@@ -1,3 +1,4 @@
+import { castArray } from "lodash";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
 import { Span, Button } from "utils/Components";
@@ -10,8 +11,6 @@ interface Props {
 	color_type: string;
 	label?: string;
 }
-
-const { castArray } = lodash;
 
 export const ColorRowButton: React.ComponentType<Props> = props => {
 	const { label, button_extra_className, color, color_type } = props;
