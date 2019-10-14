@@ -10,10 +10,19 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Create a color palette based on the colors of an image.
 
+
 == Description ==
 
-This plugin provides a simple utility to generate a color palette based on the dominant colors of an image.
-It also creates color schemes based on the image colors. Available schemes include:
+[Demo](https://gutenberg-showcase.melonpan.io/image-color-palette) - [Documentation](https://melonpan.io/wordpress-plugins/image-color-palette) - [GitHub](https://github.com/garciaalvaro/image-color-palette)
+
+Image Color Palette provides a simple utility to generate a color palette based on the dominant colors of an image. It also creates color schemes based on the image colors.
+
+The colors can be copied to the clipboard and pasted in a color picker. When a registered block is selected the plugin permits applying the color to certain block attributes like text or background color.
+
+
+== Color schemes ==
+
+Available schemes include:
 
 * Analogous
 * Monochromatic
@@ -24,11 +33,6 @@ It also creates color schemes based on the image colors. Available schemes inclu
 * Darker
 * Desaturated
 * Saturated
-
-The colors can be copied to the clipboard and pasted in a color picker.
-When a registered block is selected the plugin permits applying the color to certain block attributes like text or background color.
-
-[GitHub repository](https://github.com/garciaalvaro/image-color-palette)
 
 
 == Screenshots ==
