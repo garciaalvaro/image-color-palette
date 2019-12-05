@@ -1,6 +1,7 @@
 import { useState, useEffect } from "@wordpress/element";
 import { withSelect } from "@wordpress/data";
 
+import "./ColorRow.styl";
 import { generateColorsScheme } from "utils/tools";
 import { store_slug } from "utils/data";
 import { Div } from "utils/Components";

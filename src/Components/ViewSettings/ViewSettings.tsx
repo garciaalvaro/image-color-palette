@@ -1,3 +1,4 @@
+import "./ViewSettings.styl";
 import { Div } from "utils/Components";
 import { Controls } from "../Controls/Controls";
 

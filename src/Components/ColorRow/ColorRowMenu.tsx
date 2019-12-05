@@ -3,6 +3,7 @@ import { withSelect, withDispatch } from "@wordpress/data";
 import { compose } from "@wordpress/compose";
 import copy from "copy-text-to-clipboard";
 
+import "./ColorRowMenu.styl";
 import { block_types } from "utils/data";
 import { Div, Button, Icon, Span } from "utils/Components";
 

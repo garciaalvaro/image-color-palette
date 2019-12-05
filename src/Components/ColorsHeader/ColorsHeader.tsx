@@ -1,5 +1,6 @@
 import { __ } from "@wordpress/i18n";
 
+import "./ColorsHeader.styl";
 import { Div, H5, Span } from "utils/Components";
 import { ColorsHeaderControlScheme } from "./ColorsHeaderControlScheme";
 

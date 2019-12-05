@@ -2,6 +2,7 @@ import { __ } from "@wordpress/i18n";
 import { compose } from "@wordpress/compose";
 import { withSelect, withDispatch } from "@wordpress/data";
 
+import "./Tabs.styl";
 import { Div, Button } from "utils/Components";
 import { store_slug } from "utils/data";
 

@@ -1,5 +1,6 @@
 import { withSelect } from "@wordpress/data";
 
+import "./Colors.styl";
 import { Div } from "utils/Components";
 import { store_slug } from "utils/data";
 import { ColorRow } from "../ColorRow/ColorRow";

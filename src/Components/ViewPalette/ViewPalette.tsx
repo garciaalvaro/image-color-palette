@@ -1,6 +1,7 @@
 import { __ } from "@wordpress/i18n";
 import { withSelect } from "@wordpress/data";
 
+import "./ViewPalette.styl";
 import { Div, Span } from "utils/Components";
 import { store_slug } from "utils/data";
 import { Media } from "../Media/Media";
