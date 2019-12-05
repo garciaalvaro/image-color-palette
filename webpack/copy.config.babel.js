@@ -25,7 +25,8 @@ module.exports = [
 						"pro/**",
 						"README.md",
 						"src/**",
-						"tsconfig.json"
+						"tsconfig.json",
+						"webpack/**"
 					]
 				}
 			])
