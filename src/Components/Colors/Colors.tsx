@@ -6,7 +6,7 @@ import { store_slug } from "utils/data";
 import { ColorRow } from "../ColorRow/ColorRow";
 import { ColorsHeader } from "../ColorsHeader/ColorsHeader";
 
-interface WithSelectProps extends Pick<State, "colors"> {}
+type WithSelectProps = Pick<State, "colors">;
 
 export const Colors: React.ComponentType = withSelect<WithSelectProps>(
 	select => ({

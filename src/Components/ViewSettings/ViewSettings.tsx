@@ -2,7 +2,7 @@ import "./ViewSettings.styl";
 import { Div } from "utils/Components";
 import { Controls } from "../Controls/Controls";
 
-export const ViewSettings: React.ComponentType = props => {
+export const ViewSettings: React.ComponentType = () => {
 	return (
 		<Div id="view-settings">
 			<Controls />

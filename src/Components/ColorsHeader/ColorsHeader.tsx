@@ -4,7 +4,7 @@ import "./ColorsHeader.styl";
 import { Div, H5, Span } from "utils/Components";
 import { ColorsHeaderControlScheme } from "./ColorsHeaderControlScheme";
 
-export const ColorsHeader: React.ComponentType = props => {
+export const ColorsHeader: React.ComponentType = () => {
 	return (
 		<Div id="colors_header">
 			<H5 id="colors_header-title">

@@ -6,12 +6,11 @@ import { withSelect, withDispatch } from "@wordpress/data";
 import { addPrefix } from "utils/tools";
 import { store_slug } from "utils/data";
 
-interface WithSelectProps extends Pick<State, "color_palette_length"> {}
+type WithSelectProps = Pick<State, "color_palette_length">;
 
-interface WithDispatchProps
-	extends Pick<ActionCreators, "setColorPaletteLength"> {}
+type WithDispatchProps = Pick<ActionCreators, "setColorPaletteLength">;
 
-interface Props extends WithSelectProps, WithDispatchProps {}
+type Props = WithSelectProps & WithDispatchProps;
 
 export const ControlPaletteLength: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({

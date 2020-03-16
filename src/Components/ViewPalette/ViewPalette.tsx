@@ -7,9 +7,9 @@ import { store_slug } from "utils/data";
 import { Media } from "../Media/Media";
 import { Colors } from "../Colors/Colors";
 
-interface WithSelectProps extends Pick<State, "colors" | "image_url"> {}
+type WithSelectProps = Pick<State, "colors" | "image_url">;
 
-interface Props extends WithSelectProps {}
+type Props = WithSelectProps;
 
 export const ViewPalette: React.ComponentType = withSelect<WithSelectProps>(
 	select => ({

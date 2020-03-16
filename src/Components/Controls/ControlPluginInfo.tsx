@@ -4,7 +4,7 @@ import "./ControlPluginInfo.styl";
 import { Icon, Div, H3, Span } from "utils/Components";
 import { plugin_title } from "utils/data";
 
-export const ControlPluginInfo: React.ComponentType = props => {
+export const ControlPluginInfo: React.ComponentType = () => {
 	return (
 		<Div id="info">
 			<Div id="info-logo">
@@ -13,7 +13,9 @@ export const ControlPluginInfo: React.ComponentType = props => {
 			<Div id="info-container">
 				<H3 id="info-name">{plugin_title}</H3>
 				<Span id="info-description">
-					{__("Create a color palette based on the colors of an image.")}
+					{__(
+						"Create a color palette based on the colors of an image."
+					)}
 				</Span>
 			</Div>
 		</Div>

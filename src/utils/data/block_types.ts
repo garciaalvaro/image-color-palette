@@ -35,7 +35,11 @@ export const block_types: BlockTypeColorAttributes = {
 		{ label: __("Text Color"), attribute: "customTextColor", icon: "text" }
 	],
 	"core/pullquote": [
-		{ label: __("Main Color"), attribute: "customMainColor", icon: "border" },
+		{
+			label: __("Main Color"),
+			attribute: "customMainColor",
+			icon: "border"
+		},
 		{ label: __("Text Color"), attribute: "customTextColor", icon: "text" }
 	],
 	"core/media-text": [

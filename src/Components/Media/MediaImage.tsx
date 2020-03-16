@@ -7,20 +7,19 @@ import "./MediaImage.styl";
 import { store_slug, rgbquant_options } from "utils/data";
 import { Div, Button, Icon, ImgRef } from "utils/Components";
 
-interface WithSelectProps
-	extends Pick<
-		State,
-		"colors" | "color_distance_equation" | "color_palette_length" | "image_url"
-	> {}
+type WithSelectProps = Pick<
+	State,
+	"colors" | "color_distance_equation" | "color_palette_length" | "image_url"
+>;
 
-interface WithDispatchProps extends Pick<ActionCreators, "setColors"> {}
+type WithDispatchProps = Pick<ActionCreators, "setColors">;
 
-interface OwnProps {
+type OwnProps = {
 	open: Function;
 	just_selected: boolean;
-}
+};
 
-interface Props extends OwnProps, WithSelectProps, WithDispatchProps {}
+type Props = OwnProps & WithSelectProps & WithDispatchProps;
 
 export const MediaImage: React.ComponentType<OwnProps> = compose([
 	withSelect<WithSelectProps>(select => ({
@@ -78,7 +77,11 @@ export const MediaImage: React.ComponentType<OwnProps> = compose([
 					}
 				}}
 			/>
-			<Button id="button-open_media" className="button-icon" onClick={open}>
+			<Button
+				id="button-open_media"
+				className="button-icon"
+				onClick={open}
+			>
 				<Icon icon="edit" />
 			</Button>
 		</Div>

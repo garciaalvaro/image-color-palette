@@ -7,7 +7,7 @@ import { Tabs } from "../Tabs/Tabs";
 import { ViewPalette } from "../ViewPalette/ViewPalette";
 import { ViewSettings } from "../ViewSettings/ViewSettings";
 
-interface WithSelectProps extends Pick<State, "view"> {}
+type WithSelectProps = Pick<State, "view">;
 
 export const App: React.ComponentType = withSelect<WithSelectProps>(select => ({
 	view: select(store_slug).getView()

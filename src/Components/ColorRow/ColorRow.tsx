@@ -7,11 +7,11 @@ import { store_slug } from "utils/data";
 import { Div } from "utils/Components";
 import { ColorRowButton } from "./ColorRowButton";
 
-interface WithSelectProps extends Pick<State, "color_scheme"> {}
+type WithSelectProps = Pick<State, "color_scheme">;
 
-interface OwnProps {
+type OwnProps = {
 	color: string;
-}
+};
 
 export const ColorRow: React.ComponentType<OwnProps> = withSelect<
 	WithSelectProps,

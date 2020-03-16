@@ -25,7 +25,7 @@ export const generateColorsScheme = (
 		color_scheme === "desaturated" ||
 		color_scheme === "saturated"
 	) {
-		colors = times(scheme_length + 1, i => color.clone());
+		colors = times(scheme_length + 1, () => color.clone());
 	}
 
 	switch (color_scheme) {
@@ -37,7 +37,9 @@ export const generateColorsScheme = (
 		case "monochromatic":
 			colors = color.monochromatic(scheme_length + 1);
 			colors = slice(colors, 1);
-			colors = colors.sort((a, b) => (a.toHsv().v < b.toHsv().v ? 1 : -1));
+			colors = colors.sort((a, b) =>
+				a.toHsv().v < b.toHsv().v ? 1 : -1
+			);
 			break;
 
 		case "triad":
@@ -68,15 +70,20 @@ export const generateColorsScheme = (
 			const luminance_factor =
 				(100 * (1 - color.toHsl().l)) / (scheme_length + 1);
 
-			colors = colors.map((color, i) => color.lighten(luminance_factor * i));
+			colors = colors.map((color, i) =>
+				color.lighten(luminance_factor * i)
+			);
 			colors = slice(colors, 1);
 			break;
 
 		case "brighter":
 			const brightness_factor =
-				(100 * ((255 - color.getBrightness()) / 255)) / (scheme_length - 1);
+				(100 * ((255 - color.getBrightness()) / 255)) /
+				(scheme_length - 1);
 
-			colors = colors.map((color, i) => color.brighten(brightness_factor * i));
+			colors = colors.map((color, i) =>
+				color.brighten(brightness_factor * i)
+			);
 			colors = slice(colors, 1);
 			break;
 
