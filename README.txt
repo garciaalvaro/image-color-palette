@@ -70,6 +70,11 @@ Click the More button and inside the menu list click on the plugin name "Image C
 
 == Changelog ==
 
+= 1.5.0 =
+* Added linter for development
+* Updated dependencies
+* Minor fixes
+
 = 1.4.2 =
 * Monochromatic scheme colors are now sorted by brightness.
 * Fixed small bug which recalculated color palette unnecessarily.
