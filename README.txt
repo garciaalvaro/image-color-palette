@@ -2,8 +2,8 @@
 Contributors: melonpan
 Tags: blocks, gutenberg, color
 Requires at least: 5.2
-Tested up to: 5.3
-Stable tag: 1.4.2
+Tested up to: 5.4
+Stable tag: 1.5.0
 Requires PHP: 7.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -69,6 +69,11 @@ Alternatively the Plugin can be opened from the Show More button (the 3 dots on 
 Click the More button and inside the menu list click on the plugin name "Image Color Palette".
 
 == Changelog ==
+
+= 1.5.0 =
+* Added linter for development
+* Updated dependencies
+* Minor fixes
 
 = 1.4.2 =
 * Monochromatic scheme colors are now sorted by brightness.
