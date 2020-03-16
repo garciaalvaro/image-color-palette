@@ -5,11 +5,11 @@ import { SelectControl } from "@wordpress/components";
 import { store_slug, color_schemes } from "utils/data";
 import { addPrefix } from "utils/tools";
 
-interface WithSelectProps extends Pick<State, "color_scheme"> {}
+type WithSelectProps = Pick<State, "color_scheme">;
 
-interface WithDispatchProps extends Pick<ActionCreators, "setColorScheme"> {}
+type WithDispatchProps = Pick<ActionCreators, "setColorScheme">;
 
-interface Props extends WithSelectProps, WithDispatchProps {}
+type Props = WithSelectProps & WithDispatchProps;
 
 export const ColorsHeaderControlScheme: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({

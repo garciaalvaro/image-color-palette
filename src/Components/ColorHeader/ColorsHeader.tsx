@@ -3,7 +3,7 @@ import { __ } from "@wordpress/i18n";
 import { Div, H5, Span } from "utils/Components";
 import { ControlColorScheme } from "./ControlColorScheme";
 
-export const ColorsHeader: React.ComponentType = props => {
+export const ColorsHeader: React.ComponentType = () => {
 	return (
 		<Div id="colors-header">
 			<H5 id="title-image_colors">

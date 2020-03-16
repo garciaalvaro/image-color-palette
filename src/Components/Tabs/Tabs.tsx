@@ -6,11 +6,11 @@ import "./Tabs.styl";
 import { Div, Button } from "utils/Components";
 import { store_slug } from "utils/data";
 
-interface WithSelectProps extends Pick<State, "view"> {}
+type WithSelectProps = Pick<State, "view">;
 
-interface WithDispatchProps extends Pick<ActionCreators, "setView"> {}
+type WithDispatchProps = Pick<ActionCreators, "setView">;
 
-interface Props extends WithSelectProps, WithDispatchProps {}
+type Props = WithSelectProps & WithDispatchProps;
 
 interface Tab {
 	value: State["view"];

@@ -5,7 +5,7 @@ import { ControlPaletteLength } from "./ControlPaletteLength";
 import { ControlColorScheme } from "./ControlColorScheme";
 import { ControlColorDistance } from "./ControlColorDistance";
 
-export const Controls: React.ComponentType = props => {
+export const Controls: React.ComponentType = () => {
 	return (
 		<Fragment>
 			<ControlPluginInfo />

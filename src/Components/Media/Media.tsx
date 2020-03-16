@@ -8,12 +8,11 @@ import { store_slug } from "utils/data";
 import { MediaImage } from "./MediaImage";
 import { MediaPlaceholder } from "./MediaPlaceholder";
 
-interface WithSelectProps extends Pick<State, "image_id"> {}
+type WithSelectProps = Pick<State, "image_id">;
 
-interface WithDispatchProps
-	extends Pick<ActionCreators, "setImageId" | "setImageUrl"> {}
+type WithDispatchProps = Pick<ActionCreators, "setImageId" | "setImageUrl">;
 
-interface Props extends WithSelectProps, WithDispatchProps {}
+type Props = WithSelectProps & WithDispatchProps;
 
 export const Media: React.ComponentType = compose([
 	withSelect<WithSelectProps>(select => ({
@@ -34,7 +33,12 @@ export const Media: React.ComponentType = compose([
 				value={image_id}
 				render={({ open }) => {
 					if (image_id) {
-						return <MediaImage open={open} just_selected={just_selected} />;
+						return (
+							<MediaImage
+								open={open}
+								just_selected={just_selected}
+							/>
+						);
 					}
 
 					return <MediaPlaceholder open={open} />;
