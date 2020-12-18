@@ -5,7 +5,7 @@ import copy from "copy-text-to-clipboard";
 
 import "./ColorRowMenu.styl";
 import { block_types } from "utils/data";
-import { Div, Button, Icon, Span } from "utils/Components";
+import { Div, Button, Icon, Span } from "utils/components";
 
 type WithSelectProps = {
 	selected_block: ReturnType<

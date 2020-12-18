@@ -1,5 +1,5 @@
 import "./ViewSettings.styl";
-import { Div } from "utils/Components";
+import { Div } from "utils/components";
 import { Controls } from "../Controls/Controls";
 
 export const ViewSettings: React.ComponentType = () => {

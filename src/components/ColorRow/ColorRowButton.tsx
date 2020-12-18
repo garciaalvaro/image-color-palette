@@ -1,7 +1,7 @@
 import { castArray } from "lodash";
 import Popover, { ArrowContainer } from "react-tiny-popover";
 
-import { Span, Button } from "utils/Components";
+import { Span, Button } from "utils/components";
 import { ColorRowMenu } from "./ColorRowMenu";
 import { useToggle } from "utils/hooks";
 

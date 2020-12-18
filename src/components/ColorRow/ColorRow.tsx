@@ -4,7 +4,7 @@ import { withSelect } from "@wordpress/data";
 import "./ColorRow.styl";
 import { generateColorsScheme } from "utils/tools";
 import { store_slug } from "utils/data";
-import { Div } from "utils/Components";
+import { Div } from "utils/components";
 import { ColorRowButton } from "./ColorRowButton";
 
 type WithSelectProps = Pick<State, "color_scheme">;

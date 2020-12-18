@@ -5,7 +5,7 @@ import RgbQuant from "rgbquant";
 
 import "./MediaImage.styl";
 import { store_slug, rgbquant_options } from "utils/data";
-import { Div, Button, Icon, ImgRef } from "utils/Components";
+import { Div, Button, Icon, ImgRef } from "utils/components";
 
 type WithSelectProps = Pick<
 	State,

@@ -1,7 +1,7 @@
 import { __ } from "@wordpress/i18n";
 
 import "./ColorsHeader.styl";
-import { Div, H5, Span } from "utils/Components";
+import { Div, H5, Span } from "utils/components";
 import { ColorsHeaderControlScheme } from "./ColorsHeaderControlScheme";
 
 export const ColorsHeader: React.ComponentType = () => {

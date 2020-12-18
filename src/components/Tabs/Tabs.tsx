@@ -3,7 +3,7 @@ import { compose } from "@wordpress/compose";
 import { withSelect, withDispatch } from "@wordpress/data";
 
 import "./Tabs.styl";
-import { Div, Button } from "utils/Components";
+import { Div, Button } from "utils/components";
 import { store_slug } from "utils/data";
 
 type WithSelectProps = Pick<State, "view">;

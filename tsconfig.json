@@ -19,7 +19,7 @@
 		"paths": {
 			"utils/*": ["src/utils/*"],
 			"store/*": ["src/store/*"],
-			"Components/*": ["src/Components/*"]
+			"components/*": ["src/components/*"]
 		}
 	},
 	"include": ["src", "types/*"],

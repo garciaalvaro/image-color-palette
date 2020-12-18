@@ -3,7 +3,7 @@ import { useState } from "@wordpress/element";
 import { MediaUpload } from "@wordpress/block-editor";
 import { withSelect, withDispatch } from "@wordpress/data";
 
-import { Div } from "utils/Components";
+import { Div } from "utils/components";
 import { store_slug } from "utils/data";
 import { MediaImage } from "./MediaImage";
 import { MediaPlaceholder } from "./MediaPlaceholder";

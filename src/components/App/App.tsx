@@ -1,7 +1,7 @@
 import { withSelect } from "@wordpress/data";
 
 import "./App.styl";
-import { Div } from "utils/Components";
+import { Div } from "utils/components";
 import { store_slug } from "utils/data";
 import { Tabs } from "../Tabs/Tabs";
 import { ViewPalette } from "../ViewPalette/ViewPalette";

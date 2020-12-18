@@ -1,7 +1,7 @@
 import { __ } from "@wordpress/i18n";
 
 import "./MediaPlaceholder.styl";
-import { Div, Span, Icon } from "utils/Components";
+import { Div, Span, Icon } from "utils/components";
 
 interface Props {
 	open: Function;
