@@ -1,0 +1,1 @@
+export { ViewPalette } from "./ViewPalette";

@@ -4,13 +4,13 @@ import "./App.styl";
 import { Div } from "utils/components";
 import { store_slug } from "utils/data";
 import { Tabs } from "../Tabs/Tabs";
-import { ViewPalette } from "../ViewPalette/ViewPalette";
-import { ViewSettings } from "../ViewSettings/ViewSettings";
+import { ViewPalette } from "../ViewPalette";
+import { ViewSettings } from "../ViewSettings";
 
 type WithSelectProps = Pick<State, "view">;
 
 export const App: React.ComponentType = withSelect<WithSelectProps>(select => ({
-	view: select(store_slug).getView()
+	view: select(store_slug).getView(),
 }))(props => {
 	const { view } = props;
 
