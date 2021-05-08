@@ -12,5 +12,5 @@ export const rgbquant_options = {
 	reIndex: false, // affects predefined palettes only. if true, allows compacting of sparsed palette once target palette size is reached. also enables palette sorting.
 	useCache: true, // enables caching for perf usually, but can reduce perf in some cases, like pre-def palettes
 	cacheFreq: 10, // min color occurance count needed to qualify for caching
-	colorDist: "manhattan" // method used to determine color distance, can also be "euclidean"
+	colorDist: "manhattan", // method used to determine color distance, can also be "euclidean"
 };
