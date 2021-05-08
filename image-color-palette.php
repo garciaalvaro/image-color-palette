@@ -12,18 +12,8 @@
 namespace IMAGECOLORPALETTE;
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
-
-if ( ! defined( __NAMESPACE__ . '\PLUGIN_VERSION' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_VERSION', '1.5.0' );
-}
-if ( ! defined( __NAMESPACE__ . '\PLUGIN_NAME' ) ) {
-	define( __NAMESPACE__ . '\PLUGIN_NAME', 'image-color-palette' );
-}
-if ( ! defined( __NAMESPACE__ . '\BUILD_DIR' ) ) {
-	define( __NAMESPACE__ . '\BUILD_DIR', plugins_url( 'build/', __FILE__ ) );
+if (!defined("ABSPATH")) {
+	exit();
 }
 
 /**
@@ -31,32 +21,36 @@ if ( ! defined( __NAMESPACE__ . '\BUILD_DIR' ) ) {
  *
  * @since 1.0.0
  */
-add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\enqueue', 910 );
-function enqueue() {
+add_action("enqueue_block_editor_assets", __NAMESPACE__ . '\enqueue', 910);
+function enqueue()
+{
+	$plugin_name = "image-color-palette";
+	$plugin_version = "1.5.0";
+	$dist_dir = \plugins_url("dist/", __FILE__);
 
 	wp_enqueue_style(
-		PLUGIN_NAME,
-		BUILD_DIR . PLUGIN_NAME . '.css',
-		array(),
-		PLUGIN_VERSION
+		$plugin_name,
+		$dist_dir . $plugin_name . ".css",
+		[],
+		$plugin_version
 	);
 
 	wp_enqueue_script(
-		PLUGIN_NAME,
-		BUILD_DIR . PLUGIN_NAME . '.js',
-		array(
-			'lodash',
-			'wp-block-editor',
-			'wp-components',
-			'wp-compose',
-			'wp-data',
-			'wp-edit-post',
-			'wp-element',
-			'wp-hooks',
-			'wp-i18n',
-			'wp-plugins',
-		),
-		PLUGIN_VERSION,
+		$plugin_name,
+		$dist_dir . $plugin_name . ".js",
+		[
+			"lodash",
+			"wp-block-editor",
+			"wp-components",
+			"wp-compose",
+			"wp-data",
+			"wp-edit-post",
+			"wp-element",
+			"wp-hooks",
+			"wp-i18n",
+			"wp-plugins",
+		],
+		$plugin_version,
 		true // Enqueue in the footer.
 	);
 }
@@ -66,7 +60,8 @@ function enqueue() {
  *
  * @since 1.0.0
  */
-add_action( 'plugins_loaded', __NAMESPACE__ . '\localization' );
-function localization() {
-	load_plugin_textdomain( 'image-color-palette' );
+add_action("plugins_loaded", __NAMESPACE__ . "\localization");
+function localization()
+{
+	load_plugin_textdomain("image-color-palette");
 }

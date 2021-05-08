@@ -1,15 +1,14 @@
 module.exports = {
 	parser: "@typescript-eslint/parser",
 
-	ignorePatterns: ["_extras", "_release", "build", "node_modules"],
+	ignorePatterns: ["_extras", "_release", "dist", "node_modules"],
 
 	extends: [
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:prettier/recommended",
-		"prettier/@typescript-eslint",
-		"prettier/react",
+		"prettier",
 	],
 
 	env: {
@@ -30,7 +29,7 @@ module.exports = {
 
 	settings: {
 		react: {
-			version: "16.13.1", // Version used in WP 5.6
+			version: "16.13.1", // Version used in WP 5.7
 		},
 	},
 };

@@ -35,7 +35,6 @@ module.exports = (env, { mode }) => {
 			react: "React",
 			"react-dom": "ReactDOM",
 			"@wordpress/block-editor": "wp.blockEditor",
-			"@wordpress/blocks": "wp.blocks",
 			"@wordpress/components": "wp.components",
 			"@wordpress/compose": "wp.compose",
 			"@wordpress/data": "wp.data",
@@ -43,7 +42,7 @@ module.exports = (env, { mode }) => {
 			"@wordpress/element": "wp.element",
 			"@wordpress/hooks": "wp.hooks",
 			"@wordpress/i18n": "wp.i18n",
-			"@wordpress/plugins": "wp.plugins"
+			"@wordpress/plugins": "wp.plugins",
 		},
 
 		module: { rules: [] },
@@ -69,6 +68,7 @@ module.exports = (env, { mode }) => {
 				loader: "css-loader",
 				options: {
 					modules: {
+						localIdentContext: short_name,
 						localIdentName: is_production
 							? "[hash:base64:5]"
 							: "[name]-[local]-[hash:base64:2]",
@@ -76,14 +76,7 @@ module.exports = (env, { mode }) => {
 				},
 			},
 
-			{
-				loader: "stylus-loader",
-				options: {
-					stylusOptions: {
-						use: "nib",
-					},
-				},
-			},
+			"stylus-loader",
 		],
 	});
 
