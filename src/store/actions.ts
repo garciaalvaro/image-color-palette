@@ -1,30 +1,36 @@
 export const actions: ActionCreators = {
 	setView: payload => ({
 		type: "SET_VIEW",
-		payload
+		payload,
 	}),
+
 	setColors: payload => ({
 		type: "SET_COLORS",
-		payload
+		payload,
 	}),
-	setColorDistanceEquation: payload => ({
-		type: "SET_COLOR_DISTANCE_EQUATION",
-		payload
+
+	setColorDistanceEq: payload => ({
+		type: "SET_COLOR_DISTANCE_EQ",
+		payload,
 	}),
+
 	setColorPaletteLength: payload => ({
 		type: "SET_COLOR_PALETTE_LENGTH",
-		payload
+		payload,
 	}),
+
 	setColorScheme: payload => ({
 		type: "SET_COLOR_SCHEME",
-		payload
+		payload,
 	}),
+
 	setImageId: payload => ({
 		type: "SET_IMAGE_ID",
-		payload
+		payload,
 	}),
+
 	setImageUrl: payload => ({
 		type: "SET_IMAGE_URL",
-		payload
-	})
+		payload,
+	}),
 };
