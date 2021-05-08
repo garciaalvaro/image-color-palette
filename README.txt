@@ -70,6 +70,11 @@ Click the More button and inside the menu list click on the plugin name "Image C
 
 == Changelog ==
 
+= 2.0.0 =
+* Major refactor
+* Updated dependencies
+* Minor fixes
+
 = 1.5.0 =
 * Added linter for development
 * Updated dependencies
