@@ -1,11 +1,7 @@
-import "./ViewSettings.styl";
-import { Div } from "utils/components";
+import React, { FunctionComponent } from "react";
+
 import { Controls } from "../Controls";
 
-export const ViewSettings: React.ComponentType = () => {
-	return (
-		<Div id="view-settings">
-			<Controls />
-		</Div>
-	);
+export const ViewSettings: FunctionComponent = () => {
+	return <Controls />;
 };

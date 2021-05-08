@@ -1,33 +1,38 @@
+import React, { FunctionComponent } from "react";
 import { __ } from "@wordpress/i18n";
-import { withSelect } from "@wordpress/data";
+import { Fragment } from "@wordpress/element";
+import { useSelect } from "@wordpress/data";
 
-import "./ViewPalette.styl";
-import { Div, Span } from "utils/components";
-import { store_slug } from "utils/data";
+import styles from "./ViewPalette.styl";
+import { store_slug } from "@/utils";
 import { Media } from "../Media";
-import { Colors } from "../Colors";
+import { ColorsHeader } from "../ColorsHeader";
+import { ColorRow } from "../ColorRow";
 
-type WithSelectProps = Pick<State, "colors" | "image_url">;
-
-type Props = WithSelectProps;
-
-export const ViewPalette: React.ComponentType = withSelect<WithSelectProps>(
-	select => ({
-		colors: select(store_slug).getColors(),
-		image_url: select(store_slug).getImageUrl(),
-	})
-)((props: Props) => {
-	const { colors, image_url } = props;
+export const ViewPalette: FunctionComponent = () => {
+	const colors = useSelect(select => select(store_slug).getColors());
+	const image_url = useSelect(select => select(store_slug).getImageUrl());
+	const is_quantizing = colors.length === 0 && !!image_url;
 
 	return (
-		<Div id="view-palette">
-			{!colors.length && !!image_url && (
-				<Div id="quantizing">
-					<Span>{__("Quantizing...")}</Span>
-				</Div>
+		<Fragment>
+			{is_quantizing && (
+				<div className={styles.quantizing}>
+					<span>{__("Quantizing...")}</span>
+				</div>
 			)}
+
 			<Media />
-			{!!colors.length && <Colors />}
-		</Div>
+
+			{colors.length > 0 && (
+				<Fragment>
+					<ColorsHeader />
+
+					{colors.map((color, index) => (
+						<ColorRow key={index} color={color} />
+					))}
+				</Fragment>
+			)}
+		</Fragment>
 	);
-});
+};

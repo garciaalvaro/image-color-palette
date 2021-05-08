@@ -1,1 +1,0 @@
-export { ColorsHeader } from "./ColorsHeader";

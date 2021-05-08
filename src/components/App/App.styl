@@ -2,19 +2,13 @@
  * App
  */
 
-@import "./_colors"
-@import "./_logo"
+.container
+	display flex
+	flex-direction column
+	--ease_standard cubic-bezier(0.4, 0.0, 0.2, 1)
+	--ease_deceleration cubic-bezier(0.0, 0.0, 0.2, 1)
 
-+prefix-classes('icp-')
-
-	#icp-container
-		display flex
-		flex-direction column
-
-	.button
-	.button-icon
-		cursor pointer
-		padding 0
+	button
 
 		&
 		&:focus
@@ -24,9 +18,3 @@
 			outline none
 			border none
 			font-size inherit
-
-	.button-icon
-		padding 0
-		display flex
-		align-items center
-		cursor pointer

@@ -1,0 +1,43 @@
+/**
+ * Color
+ */
+
+.button
+	position relative
+	padding 0
+	flex 1
+
+	&:hover
+		z-index 1
+
+	&:before
+		content ""
+		position absolute
+		top 0
+		bottom 0
+		left 0
+		right 0
+		border 1px solid transparent
+		transition border-color .05s var(--ease_deceleration)
+
+	&:hover:before
+		border-color rgba(0,0,0,.3)
+
+	&
+	&:hover
+	&:focus
+		color rgba(0,0,0,.9)
+
+.dark
+	color rgba(255,255,255,.9)
+
+	&:hover:before
+		border-color rgba(255,255,255,.3)
+
+	&
+	&:hover
+	&:focus
+		color rgba(255,255,255,.9)
+
+.popover
+	z-index 999999

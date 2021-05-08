@@ -2,44 +2,36 @@
  * ColorRow
  */
 
-+prefix-classes('icp-')
+.container
+	display flex
+	height 4em
 
-	.color_row
-		display flex
-		height 4em
-
-	.main_color
+	> button
 		text-align left
 		flex 1
 
 		span
 			padding-left 1em
 
-		&.color_type-dark
-			color
-
-	.scheme_colors
+	> div
 		display flex
 		flex 1
 
-	.scheme_color
-		flex 1
+.button-open_color
+	position relative
+	margin 0 // Necessary for Safari
 
-	.button-open_color
-		position relative
-		margin 0 // Necessary for Safari
+	&:hover:before
+		border-top 1px solid var(--color_03)
+		border-bottom 1px solid var(--color_03)
+		border-left 1px solid var(--color_03)
+		border-right 1px solid var(--color_03)
 
-		&:hover:before
-			border-top 1px solid var(--color_03)
-			border-bottom 1px solid var(--color_03)
-			border-left 1px solid var(--color_03)
-			border-right 1px solid var(--color_03)
-
-		&:before
-			content ""
-			position absolute
-			top 0
-			bottom 0
-			left 0
-			right 0
-			z-index 1
+	&:before
+		content ""
+		position absolute
+		top 0
+		bottom 0
+		left 0
+		right 0
+		z-index 1

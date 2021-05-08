@@ -1,66 +1,57 @@
+import React, { FunctionComponent } from "react";
 import { useState, useEffect } from "@wordpress/element";
-import { withSelect } from "@wordpress/data";
+import { useSelect } from "@wordpress/data";
 
-import "./ColorRow.styl";
-import { generateColorsScheme } from "utils/tools";
-import { store_slug } from "utils/data";
-import { Div } from "utils/components";
-import { ColorRowButton } from "./ColorRowButton";
+import styles from "./ColorRow.styl";
+import { generateColorScheme, store_slug } from "@/utils";
+import { Color } from "./Color";
 
-type WithSelectProps = Pick<State, "color_scheme">;
-
-type OwnProps = {
+interface Props {
 	color: string;
-};
+}
 
-export const ColorRow: React.ComponentType<OwnProps> = withSelect<
-	WithSelectProps,
-	OwnProps
->(select => ({
-	color_scheme: select(store_slug).getColorScheme()
-}))(props => {
-	const { color, color_scheme } = props;
-	const [scheme_colors, setSchemeColors] = useState<string[]>([]);
-	const [scheme_colors_type, setSchemeColorsType] = useState<
-		("light" | "dark")[]
-	>([]);
-	const [color_hex, setColorHex] = useState<string>("");
-	const [color_type, setColorType] = useState<"light" | "dark">("light");
+export const ColorRow: FunctionComponent<Props> = props => {
+	const color_scheme = useSelect(select =>
+		select(store_slug).getColorScheme()
+	);
+
+	const [scheme, setScheme] = useState<ColorScheme>([]);
+
+	const [scheme_bg, setSchemeBg] = useState<ColorBg[]>([]);
+
+	const [color_bg, setColorBg] = useState<ColorBg>("light");
+
+	const [color, setColor] = useState<Color>("");
 
 	useEffect(() => {
-		const {
-			scheme_colors,
-			scheme_colors_type,
-			color_hex,
-			color_type
-		} = generateColorsScheme(color_scheme, color);
+		const { scheme, scheme_bg, color, color_bg } = generateColorScheme(
+			color_scheme,
+			props.color
+		);
 
-		setSchemeColors(scheme_colors);
-		setSchemeColorsType(scheme_colors_type);
-		setColorHex(color_hex);
-		setColorType(color_type);
+		setScheme(scheme);
+		setSchemeBg(scheme_bg);
+		setColor(color);
+		setColorBg(color_bg);
 	}, [color, color_scheme]);
 
 	return (
-		<Div className="color_row">
-			<ColorRowButton
-				label={color_hex}
-				button_extra_className="main_color"
-				color={color_hex}
-				color_type={color_type}
-			/>
-			{!!scheme_colors.length && (
-				<Div className="scheme_colors">
-					{scheme_colors.map((color, index) => (
-						<ColorRowButton
+		<div className={styles.container}>
+			<Color color={color} color_bg={color_bg} show_text={true} />
+
+			{scheme.length > 0 && (
+				<div>
+					{scheme.map((color, index) => (
+						<Color
+							// Ideally a unique id should be used,
+							// but the color value could be repeated.
 							key={index}
-							button_extra_className="scheme_color"
 							color={color}
-							color_type={scheme_colors_type[index]}
+							color_bg={scheme_bg[index]}
 						/>
 					))}
-				</Div>
+				</div>
 			)}
-		</Div>
+		</div>
 	);
-});
+};

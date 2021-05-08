@@ -1,17 +1,18 @@
-import { Fragment } from "@wordpress/element";
+import React, { FunctionComponent } from "react";
 
-import { ControlPluginInfo } from "./ControlPluginInfo";
-import { ControlPaletteLength } from "./ControlPaletteLength";
-import { ControlColorScheme } from "./ControlColorScheme";
-import { ControlColorDistance } from "./ControlColorDistance";
+import styles from "./Controls.styl";
+import { PluginInfo } from "./PluginInfo";
+import { PaletteLength } from "./PaletteLength";
+import { ColorScheme } from "./ColorScheme";
+import { ColorDistance } from "./ColorDistance";
 
-export const Controls: React.ComponentType = () => {
+export const Controls: FunctionComponent = () => {
 	return (
-		<Fragment>
-			<ControlPluginInfo />
-			<ControlPaletteLength />
-			<ControlColorScheme />
-			<ControlColorDistance />
-		</Fragment>
+		<div className={styles.container}>
+			<PluginInfo />
+			<PaletteLength />
+			<ColorScheme />
+			<ColorDistance />
+		</div>
 	);
 };

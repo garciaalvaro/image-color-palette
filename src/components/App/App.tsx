@@ -1,23 +1,20 @@
-import { withSelect } from "@wordpress/data";
+import React from "react";
+import { useSelect } from "@wordpress/data";
 
-import "./App.styl";
-import { Div } from "utils/components";
-import { store_slug } from "utils/data";
-import { Tabs } from "../Tabs/Tabs";
+import styles from "./App.styl";
+import { store_slug } from "@/utils";
+import { Tabs } from "../Tabs";
 import { ViewPalette } from "../ViewPalette";
 import { ViewSettings } from "../ViewSettings";
 
-type WithSelectProps = Pick<State, "view">;
-
-export const App: React.ComponentType = withSelect<WithSelectProps>(select => ({
-	view: select(store_slug).getView(),
-}))(props => {
-	const { view } = props;
+export const App: React.ComponentType = () => {
+	const view = useSelect(select => select(store_slug).getView());
 
 	return (
-		<Div id="container" className="color_type-light">
+		<div className={styles.container}>
 			<Tabs />
+
 			{view === "palette" ? <ViewPalette /> : <ViewSettings />}
-		</Div>
+		</div>
 	);
-});
+};

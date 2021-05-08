@@ -2,46 +2,35 @@
  * ColorsHeader
  */
 
-#icp-colors_header
-	border-top 1px solid var(--color_005)
+.container
+	border-top 1px solid rgba(0,0,0,.05)
 	height 2em
 	display flex
 	align-items center
 
-	.icp-control-select
-	h5
-		flex 1
+.select.select
+	border-radius 0
+	overflow hidden
+	padding 0
 
-	select
-	h5
-		margin 0
-		font-size .97em
-		font-weight 500
-		color var(--color_06)
-		padding 0
-		line-height 2em
-		white-space nowrap
-		text-overflow ellipsis
-		overflow hidden
-
-	h5 span
-		padding-left .5em
-
-	.components-base-control__field
-		margin 0
-
-	select
+	&
+	&:focus
 		outline none
 		border none
 		box-shadow none
-		border-radius 0
-		padding-left .5em
-		max-height 2em
-		/* https://material.io/tools/icons/?icon=unfold_more */
-		background-image url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PHBhdGggZmlsbD0iIzY2NjY2NiIgZD0iTTEyIDUuODNMMTUuMTcgOWwxLjQxLTEuNDFMMTIgMyA3LjQxIDcuNTkgOC44MyA5IDEyIDUuODN6bTAgMTIuMzRMOC44MyAxNWwtMS40MSAxLjQxTDEyIDIxbDQuNTktNC41OUwxNS4xNyAxNSAxMiAxOC4xN3oiLz48L3N2Zz4=")
-		appearance none
 		background-color transparent
-		background-repeat no-repeat
-		background-size 18px
-		background-position-x right
-		background-position-y center
+		color rgba(0,0,0,.6)
+
+.select.select
+.title
+	flex 1
+	max-height 2em
+	font-size .97em
+	font-weight 500
+	color rgba(0,0,0,.6)
+	margin 0
+	padding 0
+	padding-left .5em
+	line-height 2em
+	white-space nowrap
+	text-overflow ellipsis
