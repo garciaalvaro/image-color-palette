@@ -1,0 +1,35 @@
+/**
+ * Tabs
+ */
+
+.container
+	display flex
+	height 50px
+	position sticky
+	top 0
+	z-index 10
+	background-color #fff
+
+.button.button
+	padding 5px
+	height 100%
+	width 50%
+	background transparent
+	display flex
+	align-items center
+	justify-content center
+	transition background-color .15s var(--ease_deceleration)
+	border-bottom 1px solid rgba(0,0,0,0.1)
+	letter-spacing .02em
+
+	&:hover
+		background-color rgba(0,0,0,0.05)
+		margin-bottom 1px
+
+	&.is_active
+		margin-bottom -1px
+		font-weight 600
+		padding-bottom 3px
+		border-bottom 3px solid rgba(0,0,0,0.9)
+		font-weight 600
+		letter-spacing 0

@@ -1,16 +1,20 @@
 import { registerStore } from "@wordpress/data";
 
-import { store_slug } from "utils/data";
-import { reducer } from "store/reducer";
-import { actions } from "store/actions";
-import { selectors } from "store/selectors";
+import { store_slug } from "@/utils";
+import { reducer } from "@/store/reducer";
+import { actions } from "@/store/actions";
+import { selectors } from "@/store/selectors";
 
-registerStore(store_slug, {
-	// @ts-ignore
+export const store = registerStore<State>(store_slug, {
+	// @ts-expect-error TODO
 	reducer,
-	// @ts-ignore
+	// @ts-expect-error TODO
 	actions,
-	// @ts-ignore
 	selectors,
-	persist: ["color_palette_length", "color_scheme", "color_distance_equation"]
+
+	persist: [
+		"color_palette_length",
+		"color_scheme",
+		"color_distance_equation",
+	],
 });

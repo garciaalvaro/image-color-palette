@@ -1,10 +1,4 @@
-interface ComponentProps extends Object {
-	children?: React.ReactNode;
-	id?: string | null;
-	className?: string | null | (string | null)[] | undefined;
-}
-
-type ColorScheme =
+type ColorSchemeType =
 	| "none"
 	| "analogous"
 	| "monochromatic"
@@ -15,3 +9,17 @@ type ColorScheme =
 	| "darker"
 	| "desaturated"
 	| "saturated";
+
+type TinyColorInstance = tinycolor.Instance;
+
+type ColorBg = "light" | "dark";
+
+type ValueOf<T> = T[keyof T];
+
+type Color = string;
+
+type ColorScheme = Color[];
+
+type View = "palette" | "settings";
+
+type ColorDistanceEq = "euclidean" | "manhattan";

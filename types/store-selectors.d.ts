@@ -1,11 +1,20 @@
-type Selector<T, P = null> = (state: State, parameter: P) => T;
+type Selector<R> = () => R;
+type SelectorCreator<R> = (state: State) => R;
 
-interface Selectors {
-	getView: Selector<State["view"]>;
-	getColors: Selector<State["colors"]>;
-	getColorPaletteLength: Selector<State["color_palette_length"]>;
-	getColorDistanceEquation: Selector<State["color_distance_equation"]>;
-	getColorScheme: Selector<State["color_scheme"]>;
-	getImageId: Selector<State["image_id"]>;
-	getImageUrl: Selector<State["image_url"]>;
+interface SelectorsReturn {
+	getView: State["view"];
+	getColors: State["colors"];
+	getColorPaletteLength: State["color_palette_length"];
+	getColorDistanceEq: State["color_distance_equation"];
+	getColorScheme: State["color_scheme"];
+	getImageId: State["image_id"];
+	getImageUrl: State["image_url"];
 }
+
+type Selectors = {
+	[K in keyof SelectorsReturn]: Selector<SelectorsReturn[K]>;
+};
+
+type SelectorCreators = {
+	[K in keyof SelectorsReturn]: SelectorCreator<SelectorsReturn[K]>;
+};

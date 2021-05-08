@@ -1,3 +1,2 @@
-export { addPrefix } from "./addPrefix";
-export { generateColorsScheme } from "./generateColorsScheme";
-export { prepareProps } from "./prepareProps";
+export { className } from "./className";
+export { generateColorScheme } from "./generateColorScheme";

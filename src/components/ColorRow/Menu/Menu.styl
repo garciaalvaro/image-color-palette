@@ -1,0 +1,41 @@
+/**
+ * Menu
+ */
+
+.container
+	background-color #fff
+	border 1px solid rgba(0,0,0,0.8)
+	position relative
+	padding 5px 10px 5px 8px
+	max-width 260px
+
+	&:before
+		z-index 1
+		content ""
+		position absolute
+		top 1px
+		left 1px
+		border-left 0px solid transparent
+		border-right 25px solid transparent
+		border-bottom 0 solid transparent
+		border-top 25px solid
+
+.button
+	line-height 1.7em
+	min-height 40px
+	text-align left
+	padding 0
+	fill rgba(0,0,0,0.8)
+	width 100%
+	display grid
+	grid-template-columns 24px auto
+	column-gap 5px
+	align-items center
+
+	&
+	&:hover
+		color rgba(0,0,0,0.9)
+
+.icon
+	display flex
+	justify-content center

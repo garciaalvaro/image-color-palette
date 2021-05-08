@@ -1,0 +1,45 @@
+/**
+ * Placeholder
+ */
+
+.description
+	color rgba(0,0,0,0.8)
+	text-align center
+
+button.container
+	display flex
+	flex-direction column
+	align-items center
+	justify-content center
+	width calc(100% - 10px)
+	padding 30px
+	margin 5px
+	height 270px
+	cursor pointer
+
+	&:hover .icon
+		background-color rgba(255,255,255,0.9)
+
+	&
+	&:hover
+	&:focus
+		background-color #FFA07A
+
+.icon
+	transition transform .3s var(--ease_standard), box-shadow .3s var(--ease_standard), background-color .3s var(--ease_standard)
+	background-color rgba(255,255,255,0.3)
+	padding 20px
+	border-radius 50%
+	margin-bottom 20px
+	box-shadow 0 2px 2px currentColor
+	color rgba(0,0,0,0.07)
+	width 60px
+	height 60px
+	display flex
+	align-items center
+	justify-content center
+
+	&:hover
+		background-color #fff
+		transform scale(1.02)
+		box-shadow 0 4px 2px currentColor

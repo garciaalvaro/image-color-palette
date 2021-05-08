@@ -28,6 +28,6 @@ Available schemes include:
 
 ## Screenshots
 
-<img src="assets-repo/screenshot-1.png" width="700px" alt="Example use of palette generated colors" />
+<img src="docs/screenshot-1.png" width="700px" alt="Example use of palette generated colors" />
 
-<img src="assets-repo/screenshot-2.png" width="700px" alt="Scheme select list" />
+<img src="docs/screenshot-2.png" width="700px" alt="Scheme select list" />
