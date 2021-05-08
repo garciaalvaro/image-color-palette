@@ -25,7 +25,7 @@ add_action("enqueue_block_editor_assets", __NAMESPACE__ . '\enqueue', 910);
 function enqueue()
 {
 	$plugin_name = "image-color-palette";
-	$plugin_version = "1.5.0";
+	$plugin_version = "2.0.0";
 	$dist_dir = \plugins_url("dist/", __FILE__);
 
 	wp_enqueue_style(
