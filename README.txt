@@ -1,8 +1,8 @@
 === Image Color Palette ===
 Contributors: melonpan
 Tags: blocks, gutenberg, color
-Requires at least: 5.2
-Tested up to: 5.4
+Requires at least: 5.6
+Tested up to: 5.7
 Stable tag: 2.0.0
 Requires PHP: 7.1
 License: GPLv3
